@@ -1,0 +1,41 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="520" viewBox="0 0 1400 520" role="img" aria-labelledby="title desc">
+  <title>Production Deployment Flow</title>
+  <desc>Treat prompts, actions, and trust settings as release-managed assets with explicit ownership.</desc>
+  <defs>
+    <linearGradient id="flowbg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#1f2937"/>
+      <stop offset="100%" stop-color="#166534"/>
+    </linearGradient>
+    <linearGradient id="flowcard" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.98"/>
+      <stop offset="100%" stop-color="#f0fdf4" stop-opacity="0.98"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="520" rx="30" fill="#f8fafc"/>
+  <rect x="24" y="24" width="1352" height="472" rx="28" fill="url(#flowbg)"/>
+  <text x="76" y="86" font-family="'Merriweather', serif" font-size="38" fill="#ffffff" font-weight="700">Production Deployment Flow</text>
+  <text x="76" y="122" font-family="'Source Sans 3', sans-serif" font-size="22" fill="#dcfce7">Treat prompts, actions, and trust settings as release-managed assets with explicit ownership.</text>
+  <path d="M262 284 H336" stroke="#dcfce7" stroke-width="8" stroke-linecap="round"/>
+  <path d="M472 284 H546" stroke="#dcfce7" stroke-width="8" stroke-linecap="round"/>
+  <path d="M682 284 H756" stroke="#dcfce7" stroke-width="8" stroke-linecap="round"/>
+  <path d="M892 284 H966" stroke="#dcfce7" stroke-width="8" stroke-linecap="round"/>
+  <path d="M1102 284 H1176" stroke="#dcfce7" stroke-width="8" stroke-linecap="round"/>
+  <rect x="82" y="190" width="180" height="180" rx="26" fill="url(#flowcard)"/>
+  <rect x="292" y="190" width="180" height="180" rx="26" fill="url(#flowcard)"/>
+  <rect x="502" y="190" width="180" height="180" rx="26" fill="url(#flowcard)"/>
+  <rect x="712" y="190" width="180" height="180" rx="26" fill="url(#flowcard)"/>
+  <rect x="922" y="190" width="180" height="180" rx="26" fill="url(#flowcard)"/>
+  <rect x="1132" y="190" width="180" height="180" rx="26" fill="url(#flowcard)"/>
+  <text x="106" y="236" font-family="'IBM Plex Mono', monospace" font-size="22" fill="#1f2937" font-weight="700">STEP 1</text>
+  <text x="316" y="236" font-family="'IBM Plex Mono', monospace" font-size="22" fill="#1f2937" font-weight="700">STEP 2</text>
+  <text x="526" y="236" font-family="'IBM Plex Mono', monospace" font-size="22" fill="#1f2937" font-weight="700">STEP 3</text>
+  <text x="736" y="236" font-family="'IBM Plex Mono', monospace" font-size="22" fill="#1f2937" font-weight="700">STEP 4</text>
+  <text x="946" y="236" font-family="'IBM Plex Mono', monospace" font-size="22" fill="#1f2937" font-weight="700">STEP 5</text>
+  <text x="1156" y="236" font-family="'IBM Plex Mono', monospace" font-size="22" fill="#1f2937" font-weight="700">STEP 6</text>
+  <text x="106" y="288" font-family="'Source Sans 3', sans-serif" font-size="22" fill="#0f172a" font-weight="700">Version assets</text>
+  <text x="316" y="288" font-family="'Source Sans 3', sans-serif" font-size="22" fill="#0f172a" font-weight="700">Run eval packs</text>
+  <text x="526" y="288" font-family="'Source Sans 3', sans-serif" font-size="22" fill="#0f172a" font-weight="700">Promote to UAT</text>
+  <text x="736" y="288" font-family="'Source Sans 3', sans-serif" font-size="22" fill="#0f172a" font-weight="700">Launch pilot</text>
+  <text x="946" y="288" font-family="'Source Sans 3', sans-serif" font-size="22" fill="#0f172a" font-weight="700">Watch telemetry</text>
+  <text x="1156" y="288" font-family="'Source Sans 3', sans-serif" font-size="22" fill="#0f172a" font-weight="700">Rollback or tune</text>
+</svg>

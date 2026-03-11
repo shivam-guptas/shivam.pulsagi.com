@@ -20,16 +20,6 @@ $siteCss = @'
 :root{--bg:#f5f1e8;--surface:rgba(255,255,255,.9);--border:#ddd4c4;--ink:#1f2937;--muted:#5f6b7a;--accent:#0b5cab;--accent-strong:#083d77;--accent-soft:#e8f1fb;--gold:#a86b00;--shadow:0 22px 60px rgba(15,23,42,.12);--radius:22px;--content-width:760px}*,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"Source Sans 3",sans-serif;color:var(--ink);background:radial-gradient(circle at top left,rgba(11,92,171,.16),transparent 32%),radial-gradient(circle at top right,rgba(168,107,0,.14),transparent 28%),linear-gradient(180deg,#fcfbf8 0%,var(--bg) 100%);line-height:1.75}a{color:var(--accent);text-decoration:none}a:hover{color:var(--accent-strong)}img{max-width:100%;display:block}.page-shell{width:min(1180px,calc(100% - 32px));margin:0 auto}.site-header{position:sticky;top:0;z-index:30;backdrop-filter:blur(18px);background:rgba(252,251,248,.82);border-bottom:1px solid rgba(221,212,196,.8)}.header-inner{width:min(1180px,calc(100% - 32px));margin:0 auto;min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;flex-direction:column;gap:2px}.brand-mark{font-family:"Merriweather",serif;font-size:1.15rem;font-weight:700;color:var(--ink)}.brand-sub{font-size:.85rem;color:var(--muted)}.nav-links{display:flex;gap:18px;flex-wrap:wrap}.nav-links a{font-size:.95rem;color:var(--muted)}.hero{padding:64px 0 40px}.hero-card{background:linear-gradient(135deg,rgba(255,255,255,.96),rgba(244,248,252,.9));border:1px solid rgba(221,212,196,.9);box-shadow:var(--shadow);border-radius:34px;overflow:hidden}.hero-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(320px,.8fr)}.hero-copy,.hero-media,.article-hero-copy,.article-hero-media,.content-card,.toc-card{padding:34px}.eyebrow{display:inline-flex;align-items:center;gap:10px;border-radius:999px;background:var(--accent-soft);color:var(--accent-strong);padding:8px 14px;font-size:.88rem;font-weight:600;letter-spacing:.02em}.hero h1,.article-title{font-family:"Merriweather",serif;line-height:1.18;letter-spacing:-.02em}.hero h1{margin:18px 0 16px;font-size:clamp(2.4rem,5vw,4.25rem)}.hero p,.article-standfirst,.section-intro,.article-card p,.card p,.content-card p,.content-card li,.author-copy span,.author-copy a,.reading-meta,.toc-card ol,.related-card p{color:var(--muted)}.hero p{margin:0 0 18px;font-size:1.1rem;max-width:62ch}.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}.button{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 18px;border-radius:999px;font-weight:700;border:1px solid transparent}.button-primary{background:var(--accent);color:#fff}.button-secondary{color:var(--ink);border-color:var(--border);background:rgba(255,255,255,.8)}.hero-media{background:linear-gradient(180deg,rgba(11,92,171,.08),rgba(11,92,171,.02)),linear-gradient(135deg,rgba(8,61,119,.95),rgba(15,118,110,.84));color:#fff;display:flex;flex-direction:column;justify-content:space-between;gap:28px}.hero-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.metric{padding:18px;border-radius:20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12)}.metric strong{display:block;font-size:1.4rem;margin-bottom:6px}.metric span{color:rgba(255,255,255,.82);font-size:.94rem}.hero-portrait{border-radius:26px;overflow:hidden;min-height:320px}.hero-portrait img{width:100%;height:100%;object-fit:cover}.section{padding:34px 0}.section-heading{margin:0 0 18px;font-family:"Merriweather",serif;font-size:clamp(1.8rem,3vw,2.5rem)}.section-intro{margin:0;max-width:70ch;font-size:1.05rem}.card-grid,.article-list,.related-grid{display:grid;gap:22px}.card-grid{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:30px}.card,.article-card,.toc-card,.content-card,.related-card{background:var(--surface);border:1px solid rgba(221,212,196,.95);border-radius:var(--radius);box-shadow:0 14px 36px rgba(148,163,184,.08)}.card{padding:24px}.card h3,.article-card h3,.related-card h3,.toc-card h2,.content-card h2,.content-card h3,.section-heading{font-family:"Merriweather",serif}.card h3{margin:0 0 10px;font-size:1.2rem}.article-list{grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin-top:28px}.article-card{overflow:hidden}.article-card img{width:100%;aspect-ratio:16/9;object-fit:cover}.article-card-body{padding:24px}.article-meta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px;color:var(--muted);font-size:.9rem}.article-kicker{color:var(--gold);text-transform:uppercase;letter-spacing:.08em;font-weight:700;font-size:.78rem}.article-card h3{margin:0 0 10px;font-size:1.35rem}.article-card p{margin:0 0 18px}.article-page{padding:42px 0 56px}.article-hero{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(280px,.82fr);gap:28px;align-items:stretch}.article-hero-copy,.article-hero-media{border:1px solid rgba(221,212,196,.95);border-radius:30px;box-shadow:var(--shadow)}.article-hero-copy{background:rgba(255,255,255,.88)}.article-title{margin:14px 0 18px;font-size:clamp(2.2rem,4vw,3.4rem)}.article-standfirst{margin:0;font-size:1.1rem;max-width:62ch}.author-block{display:flex;align-items:center;gap:16px;margin-top:28px;padding-top:22px;border-top:1px solid rgba(221,212,196,.95)}.author-avatar{width:64px;height:64px;border-radius:50%;object-fit:cover}.author-copy strong{display:block;font-size:1rem}.reading-meta{display:flex;gap:18px;flex-wrap:wrap;margin-top:18px;font-size:.95rem}.article-hero-media{background:linear-gradient(180deg,rgba(255,255,255,.72),rgba(232,241,251,.9))}.article-hero-media img{width:100%;border-radius:22px;aspect-ratio:4/3;object-fit:cover}.article-layout{display:grid;grid-template-columns:minmax(0,240px) minmax(0,var(--content-width));gap:28px;align-items:start;margin-top:28px}.toc-card{position:sticky;top:92px}.toc-card h2{margin:0 0 14px;font-size:1.18rem}.toc-card ol{margin:0;padding-left:20px}.toc-card li+li,.content-card li+li{margin-top:10px}.content-card section+section{margin-top:34px}.content-card h2{margin:0 0 14px;font-size:1.8rem}.content-card h3{margin:24px 0 10px;font-size:1.22rem}.content-card ul,.content-card ol{padding-left:22px}.content-card p,.content-card li{font-size:1.04rem;color:#334155}.diagram{margin:24px 0;padding:20px;border-radius:24px;background:linear-gradient(180deg,rgba(232,241,251,.88),rgba(255,255,255,.94));border:1px solid rgba(148,163,184,.22)}.diagram figcaption{margin-top:12px;color:var(--muted);font-size:.95rem}pre{overflow-x:auto;padding:18px;border-radius:18px;background:#0f172a;color:#e2e8f0;font-size:.93rem;line-height:1.6;border:1px solid rgba(15,23,42,.6)}code{font-family:"IBM Plex Mono",monospace}p code,li code{color:var(--accent-strong);background:rgba(11,92,171,.08);padding:2px 6px;border-radius:6px}blockquote{margin:22px 0;padding:18px 22px;border-left:4px solid var(--accent);background:rgba(11,92,171,.06);border-radius:0 18px 18px 0;color:#1e3a5f}.callout{padding:20px 22px;border-radius:22px;background:linear-gradient(180deg,rgba(168,107,0,.08),rgba(255,255,255,.88));border:1px solid rgba(168,107,0,.2)}.related-section{margin-top:40px}.related-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}.related-card{padding:20px}.related-card h3{margin:0 0 8px;font-size:1.05rem}.site-footer{padding:30px 0 48px;color:var(--muted);font-size:.95rem}.footer-inner{width:min(1180px,calc(100% - 32px));margin:0 auto;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;border-top:1px solid rgba(221,212,196,.95);padding-top:24px}@media (max-width:980px){.hero-grid,.article-hero,.article-layout{grid-template-columns:1fr}.toc-card{position:static}}@media (max-width:720px){.header-inner,.page-shell,.footer-inner{width:min(100% - 24px,1180px)}.hero-copy,.hero-media,.article-hero-copy,.article-hero-media,.content-card,.toc-card{padding:24px}.nav-links{gap:12px}.hero h1,.article-title{line-height:1.22}}
 '@
 
-$diagramTemplate = @'
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc"><title>{0}</title><desc>{1}</desc><defs><linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="100%"><stop offset="0%" stop-color="#0b5cab"/><stop offset="100%" stop-color="#0f766e"/></linearGradient><linearGradient id="card" x1="0%" x2="100%" y1="0%" y2="100%"><stop offset="0%" stop-color="#ffffff" stop-opacity="0.98"/><stop offset="100%" stop-color="#e8f1fb" stop-opacity="0.96"/></linearGradient></defs><rect width="1200" height="700" rx="32" fill="#f8fafc"/><rect x="30" y="30" width="1140" height="640" rx="28" fill="url(#bg)"/><rect x="90" y="110" width="240" height="120" rx="24" fill="url(#card)"/><rect x="480" y="110" width="240" height="120" rx="24" fill="url(#card)"/><rect x="870" y="110" width="240" height="120" rx="24" fill="url(#card)"/><rect x="220" y="360" width="240" height="120" rx="24" fill="url(#card)"/><rect x="610" y="360" width="240" height="120" rx="24" fill="url(#card)"/><path d="M330 170 H480" stroke="#dbeafe" stroke-width="10" stroke-linecap="round"/><path d="M720 170 H870" stroke="#dbeafe" stroke-width="10" stroke-linecap="round"/><path d="M600 230 V360" stroke="#dbeafe" stroke-width="10" stroke-linecap="round"/><path d="M330 480 H610" stroke="#dbeafe" stroke-width="10" stroke-linecap="round"/><text x="110" y="150" font-family="'Source Sans 3', sans-serif" font-size="24" fill="#0f172a" font-weight="700">{2}</text><text x="110" y="184" font-family="'Source Sans 3', sans-serif" font-size="20" fill="#475569">{3}</text><text x="500" y="150" font-family="'Source Sans 3', sans-serif" font-size="24" fill="#0f172a" font-weight="700">{4}</text><text x="500" y="184" font-family="'Source Sans 3', sans-serif" font-size="20" fill="#475569">{5}</text><text x="890" y="150" font-family="'Source Sans 3', sans-serif" font-size="24" fill="#0f172a" font-weight="700">{6}</text><text x="890" y="184" font-family="'Source Sans 3', sans-serif" font-size="20" fill="#475569">{7}</text><text x="240" y="400" font-family="'Source Sans 3', sans-serif" font-size="24" fill="#0f172a" font-weight="700">{8}</text><text x="240" y="434" font-family="'Source Sans 3', sans-serif" font-size="20" fill="#475569">{9}</text><text x="630" y="400" font-family="'Source Sans 3', sans-serif" font-size="24" fill="#0f172a" font-weight="700">{10}</text><text x="630" y="434" font-family="'Source Sans 3', sans-serif" font-size="20" fill="#475569">{11}</text><text x="90" y="72" font-family="'Merriweather', serif" font-size="34" fill="#ffffff" font-weight="700">{0}</text></svg>
-'@
-
-$diagrams = @(
-  @{ File = 'agentforce-architecture.svg'; Params = @('Agentforce Reference Architecture','A high-level architecture view showing prompts, orchestration, enterprise systems, and trust controls.','Channels','Service, sales, Slack','Reasoning','Planner and prompts','Actions','Flow, Apex, APIs','Data','CRM and Data Cloud','Trust Layer','Policy and observability') },
-  @{ File = 'agent-reasoning-flow.svg'; Params = @('Agent Reasoning Flow','A multi-step reasoning sequence for grounding, planning, acting, and validating.','Intent','Classify the request','Context','Retrieve trusted facts','Plan','Select safe actions','Act','Execute Flow or Apex','Validate','Summarize and log') },
-  @{ File = 'prompt-builder-ui.svg'; Params = @('Prompt Builder Design','A conceptual prompt builder layout with instructions, context, and output schema.','Instructions','Role, tone, policy','Grounding','CRM records and docs','Template','Variables and examples','Output','Schema and fallback','Evaluation','Test runs and scoring') }
-)
-
 $articles = @(
   @{ slug='agentforce-architecture'; file='agentforce-architecture.html'; title='What is Salesforce Agentforce - Complete Architecture Guide'; summary='A complete technical guide to Agentforce architecture, runtime components, enterprise grounding, and delivery patterns.'; image='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=80'; diagram='../assets/diagrams/agentforce-architecture.svg'; diagramAlt='Agentforce reference architecture diagram'; readTime='16 min read'; category='Architecture'; date='2026-03-11'; focus='architecture' },
   @{ slug='build-first-agent'; file='build-first-agent.html'; title='How to Build Your First AI Agent in Salesforce Agentforce'; summary='Step-by-step guidance for creating, grounding, testing, and deploying a first Agentforce implementation.'; image='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80'; diagram='../assets/diagrams/agent-reasoning-flow.svg'; diagramAlt='First Agentforce build flow diagram'; readTime='15 min read'; category='Implementation'; date='2026-03-11'; focus='first-agent' },
@@ -42,6 +32,399 @@ $articles = @(
   @{ slug='advanced-reasoning'; file='advanced-reasoning.html'; title='Advanced Multi-Step AI Agent Reasoning'; summary='Techniques for decomposing tasks, validating intermediate steps, and orchestrating reliable multi-hop Agentforce workflows.'; image='https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=1400&q=80'; diagram='../assets/diagrams/agent-reasoning-flow.svg'; diagramAlt='Advanced multi-step reasoning flow diagram'; readTime='16 min read'; category='Reasoning'; date='2026-03-11'; focus='reasoning' },
   @{ slug='production-deployment'; file='production-deployment.html'; title='Deploying Agentforce to Production'; summary='A production-readiness guide covering promotion strategy, testing, monitoring, rollback, and operational ownership.'; image='https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1400&q=80'; diagram='../assets/diagrams/agentforce-architecture.svg'; diagramAlt='Production deployment and operations diagram'; readTime='16 min read'; category='DevOps'; date='2026-03-11'; focus='production' }
 )
+
+function Get-DiagramWebPath {
+  param($article,[string]$type)
+  return "../assets/diagrams/$($article.slug)-$type.svg"
+}
+
+function Get-DiagramTheme {
+  param([string]$Focus)
+  switch ($Focus) {
+    'architecture' { return @{ start='#0b5cab'; finish='#0f766e'; panel='#eef6ff'; edge='#dbeafe' } }
+    'first-agent' { return @{ start='#14532d'; finish='#0f766e'; panel='#ecfdf5'; edge='#d1fae5' } }
+    'prompt-builder' { return @{ start='#7c2d12'; finish='#b45309'; panel='#fff7ed'; edge='#fed7aa' } }
+    'apex-actions' { return @{ start='#4c1d95'; finish='#2563eb'; panel='#f5f3ff'; edge='#ddd6fe' } }
+    'external-api' { return @{ start='#0f172a'; finish='#0369a1'; panel='#eff6ff'; edge='#bae6fd' } }
+    'support-agent' { return @{ start='#9a3412'; finish='#ea580c'; panel='#fff7ed'; edge='#fed7aa' } }
+    'security' { return @{ start='#111827'; finish='#1d4ed8'; panel='#eff6ff'; edge='#bfdbfe' } }
+    'data-cloud' { return @{ start='#075985'; finish='#0f766e'; panel='#ecfeff'; edge='#a5f3fc' } }
+    'reasoning' { return @{ start='#581c87'; finish='#a21caf'; panel='#faf5ff'; edge='#f3e8ff' } }
+    'production' { return @{ start='#1f2937'; finish='#166534'; panel='#f0fdf4'; edge='#dcfce7' } }
+  }
+}
+
+function Get-DiagramSpec {
+  param([string]$Focus)
+  switch ($Focus) {
+    'architecture' {
+      return @{
+        architecture = @{
+          focus = $Focus
+          title = 'Agentforce Runtime Architecture'
+          subtitle = 'Topics, Atlas reasoning, grounding, actions, and trust controls working as one system.'
+          cards = @(
+            @{ title='Channels'; body='Web, Slack, service console' },
+            @{ title='Topics'; body='Intent, policy, instructions' },
+            @{ title='Atlas'; body='Reason, act, observe loop' },
+            @{ title='Grounding'; body='CRM, Knowledge, Data Cloud' },
+            @{ title='Actions'; body='Flow, Apex, APIs, handoff' },
+            @{ title='Trust Layer'; body='Masking, audit, safety' }
+          )
+        }
+        workflow = @{
+          focus = $Focus
+          title = 'Architecture Delivery Flow'
+          subtitle = 'Recommended sequence for standing up a production-ready Agentforce capability.'
+          steps = @('Enable platform','Define topics','Connect data','Register actions','Test reasoning','Pilot and tune')
+        }
+      }
+    }
+    'first-agent' {
+      return @{
+        architecture = @{
+          focus = $Focus
+          title = 'First Agent Build Stack'
+          subtitle = 'A narrow first release should keep the runtime surface small and measurable.'
+          cards = @(
+            @{ title='Builder'; body='Agent role and channel' },
+            @{ title='Topic'; body='Single job to be done' },
+            @{ title='Prompt'; body='Instructions and variables' },
+            @{ title='Data'; body='Record context and knowledge' },
+            @{ title='Actions'; body='One or two safe automations' },
+            @{ title='Testing'; body='Preview, eval, pilot' }
+          )
+        }
+        workflow = @{
+          focus = $Focus
+          title = 'First Agent Setup Flow'
+          subtitle = 'A first build should move from enablement to pilot without adding broad autonomy too early.'
+          steps = @('Provision Einstein','Create the agent','Define one topic','Bind prompt inputs','Attach safe actions','Test and publish')
+        }
+      }
+    }
+    'prompt-builder' {
+      return @{
+        architecture = @{
+          focus = $Focus
+          title = 'Prompt Builder Composition'
+          subtitle = 'Prompt templates combine instructions, grounded inputs, output shape, and evaluation.'
+          cards = @(
+            @{ title='Goal'; body='Business task and audience' },
+            @{ title='Instructions'; body='Role, tone, policies' },
+            @{ title='Inputs'; body='Merge fields and variables' },
+            @{ title='Grounding'; body='Flow, Apex, related data' },
+            @{ title='Output'; body='Sections or JSON schema' },
+            @{ title='Evaluation'; body='Test cases and revisions' }
+          )
+        }
+        workflow = @{
+          focus = $Focus
+          title = 'Prompt Builder Workflow'
+          subtitle = 'Prompt quality improves when design, grounding, and testing are treated as one lifecycle.'
+          steps = @('Define outcome','Create template','Bind variables','Add grounding','Test variants','Version and publish')
+        }
+      }
+    }
+    'apex-actions' {
+      return @{
+        architecture = @{
+          focus = $Focus
+          title = 'Apex Action Runtime'
+          subtitle = 'Agent reasoning selects an action, while Apex validates, queries, and executes deterministically.'
+          cards = @(
+            @{ title='Topic'; body='Intent selects the action' },
+            @{ title='Action Contract'; body='Inputs and outputs' },
+            @{ title='Invocable Apex'; body='Annotated entry point' },
+            @{ title='Domain Logic'; body='Validation and rules' },
+            @{ title='Data Layer'; body='SOQL, DML, callouts' },
+            @{ title='Tests'; body='Sharing, limits, retries' }
+          )
+        }
+        workflow = @{
+          focus = $Focus
+          title = 'Custom Apex Action Build Flow'
+          subtitle = 'Apex actions should be introduced as small, well-described contracts, not generic service endpoints.'
+          steps = @('Define the action','Model IO wrappers','Implement invocable Apex','Validate security','Write tests','Register in Builder')
+        }
+      }
+    }
+    'external-api' {
+      return @{
+        architecture = @{
+          focus = $Focus
+          title = 'External API Integration Pattern'
+          subtitle = 'Agentforce should reach third-party services through explicit contracts, auth, and observability.'
+          cards = @(
+            @{ title='Topic'; body='Intent chooses external task' },
+            @{ title='Action'; body='External service action' },
+            @{ title='Auth'; body='Named credentials or OAuth' },
+            @{ title='Partner API'; body='REST or OpenAPI operation' },
+            @{ title='Normalizer'; body='Map response to agent output' },
+            @{ title='Monitoring'; body='Timeouts, retries, logs' }
+          )
+        }
+        workflow = @{
+          focus = $Focus
+          title = 'External API Setup Flow'
+          subtitle = 'Use External Services where possible, then add retries, mapping, and safety controls around the integration.'
+          steps = @('Choose pattern','Configure auth','Import schema','Map IO fields','Add retries','Test fallbacks')
+        }
+      }
+    }
+    'support-agent' {
+      return @{
+        architecture = @{
+          focus = $Focus
+          title = 'Support Agent Service Design'
+          subtitle = 'A support agent should retrieve service facts first, act second, and escalate cleanly when needed.'
+          cards = @(
+            @{ title='Channels'; body='Chat, portal, messaging' },
+            @{ title='Intent'; body='Case or issue classification' },
+            @{ title='Context'; body='Knowledge, cases, entitlements' },
+            @{ title='Actions'; body='Update case or create task' },
+            @{ title='Escalation'; body='Transfer to service rep' },
+            @{ title='Trust'; body='Audit, quality, policy' }
+          )
+        }
+        workflow = @{
+          focus = $Focus
+          title = 'Support Agent Delivery Flow'
+          subtitle = 'Good service agents are built around service operations, not generic chatbot behavior.'
+          steps = @('Choose safe intents','Connect cases and knowledge','Add policy checks','Define escalations','Pilot with agents','Track service KPIs')
+        }
+      }
+    }
+    'security' {
+      return @{
+        architecture = @{
+          focus = $Focus
+          title = 'Einstein Trust Layer Controls'
+          subtitle = 'Secure retrieval, masking, zero-retention routing, scoring, and audit form the security backbone.'
+          cards = @(
+            @{ title='Input'; body='Prompt and user context' },
+            @{ title='Grounding'; body='Retrieve trusted CRM data' },
+            @{ title='Masking'; body='Protect PII and PCI data' },
+            @{ title='LLM Gateway'; body='Zero data retention path' },
+            @{ title='Scoring'; body='Toxicity and safety checks' },
+            @{ title='Audit Trail'; body='Logs, feedback, review' }
+          )
+        }
+        workflow = @{
+          focus = $Focus
+          title = 'Security and Governance Flow'
+          subtitle = 'Security should be configured before launch and continuously validated after launch.'
+          steps = @('Classify data','Enable trust controls','Set least privilege','Define refusal rules','Red-team prompts','Review audit logs')
+        }
+      }
+    }
+    'data-cloud' {
+      return @{
+        architecture = @{
+          focus = $Focus
+          title = 'Data Cloud Grounding Pattern'
+          subtitle = 'Unified profiles and calculated insights improve context quality when exposed carefully to the agent.'
+          cards = @(
+            @{ title='Sources'; body='CRM, web, commerce, service' },
+            @{ title='Identity'; body='Resolution and profile unification' },
+            @{ title='Profile'; body='Customer 360 attributes' },
+            @{ title='Insights'; body='Calculated insights and segments' },
+            @{ title='Grounding'; body='Prompt and retrieval context' },
+            @{ title='Actions'; body='Sales or service next steps' }
+          )
+        }
+        workflow = @{
+          focus = $Focus
+          title = 'Data Cloud to Agent Flow'
+          subtitle = 'Data Cloud should publish curated context products rather than dumping every attribute into prompts.'
+          steps = @('Connect sources','Resolve identities','Publish profiles','Add insights','Bind to prompts','Validate freshness')
+        }
+      }
+    }
+    'reasoning' {
+      return @{
+        architecture = @{
+          focus = $Focus
+          title = 'Advanced Reasoning Loop'
+          subtitle = 'Atlas-style agent behavior works best when planning, acting, and checking are explicit stages.'
+          cards = @(
+            @{ title='Request'; body='User goal and context' },
+            @{ title='Topic'; body='Intent and policy selection' },
+            @{ title='Planner'; body='Reasoning state and subgoals' },
+            @{ title='Tools'; body='Actions and retrieval steps' },
+            @{ title='Validation'; body='Check evidence and outcomes' },
+            @{ title='Response'; body='Answer, clarify, or hand off' }
+          )
+        }
+        workflow = @{
+          focus = $Focus
+          title = 'Multi-Step Reasoning Flow'
+          subtitle = 'Reliable reasoning chains make every intermediate decision inspectable and recoverable.'
+          steps = @('Classify goal','Retrieve facts','Plan next step','Execute one tool','Validate outputs','Summarize or escalate')
+        }
+      }
+    }
+    'production' {
+      return @{
+        architecture = @{
+          focus = $Focus
+          title = 'Production Release Architecture'
+          subtitle = 'Agentforce reaches production through governed metadata promotion, evaluation, monitoring, and rollback.'
+          cards = @(
+            @{ title='Source'; body='DX project and version control' },
+            @{ title='Build'; body='Prompts, actions, metadata' },
+            @{ title='Validation'; body='Smoke tests and eval packs' },
+            @{ title='Pilot'; body='Limited user release' },
+            @{ title='Production'; body='Monitored live runtime' },
+            @{ title='Recovery'; body='Rollback and incident runbooks' }
+          )
+        }
+        workflow = @{
+          focus = $Focus
+          title = 'Production Deployment Flow'
+          subtitle = 'Treat prompts, actions, and trust settings as release-managed assets with explicit ownership.'
+          steps = @('Version assets','Run eval packs','Promote to UAT','Launch pilot','Watch telemetry','Rollback or tune')
+        }
+      }
+    }
+  }
+}
+
+function New-ArchitectureSvg {
+  param([hashtable]$spec)
+  $cards = $spec.cards
+  $theme = Get-DiagramTheme -Focus $spec.focus
+  return @"
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="860" viewBox="0 0 1400 860" role="img" aria-labelledby="title desc">
+  <title>$($spec.title)</title>
+  <desc>$($spec.subtitle)</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="$($theme.start)"/>
+      <stop offset="100%" stop-color="$($theme.finish)"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.98"/>
+      <stop offset="100%" stop-color="$($theme.panel)" stop-opacity="0.98"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="860" rx="34" fill="#f8fafc"/>
+  <rect x="26" y="26" width="1348" height="808" rx="30" fill="url(#bg)"/>
+  <text x="78" y="92" font-family="'Merriweather', serif" font-size="42" fill="#ffffff" font-weight="700">$($spec.title)</text>
+  <text x="78" y="132" font-family="'Source Sans 3', sans-serif" font-size="24" fill="$($theme.edge)">$($spec.subtitle)</text>
+  <path d="M420 260 H560" stroke="$($theme.edge)" stroke-width="10" stroke-linecap="round"/>
+  <path d="M840 260 H980" stroke="$($theme.edge)" stroke-width="10" stroke-linecap="round"/>
+  <path d="M700 338 V472" stroke="$($theme.edge)" stroke-width="10" stroke-linecap="round"/>
+  <path d="M420 614 H560" stroke="$($theme.edge)" stroke-width="10" stroke-linecap="round"/>
+  <path d="M840 614 H980" stroke="$($theme.edge)" stroke-width="10" stroke-linecap="round"/>
+  <rect x="110" y="180" width="310" height="160" rx="28" fill="url(#panel)"/>
+  <rect x="545" y="180" width="310" height="160" rx="28" fill="url(#panel)"/>
+  <rect x="980" y="180" width="310" height="160" rx="28" fill="url(#panel)"/>
+  <rect x="110" y="530" width="310" height="160" rx="28" fill="url(#panel)"/>
+  <rect x="545" y="530" width="310" height="160" rx="28" fill="url(#panel)"/>
+  <rect x="980" y="530" width="310" height="160" rx="28" fill="url(#panel)"/>
+  <text x="142" y="234" font-family="'Source Sans 3', sans-serif" font-size="18" fill="$($theme.start)" font-weight="700">01</text>
+  <text x="142" y="274" font-family="'Source Sans 3', sans-serif" font-size="34" fill="#0f172a" font-weight="700">$($cards[0].title)</text>
+  <text x="142" y="316" font-family="'Source Sans 3', sans-serif" font-size="26" fill="#475569">$($cards[0].body)</text>
+  <text x="577" y="234" font-family="'Source Sans 3', sans-serif" font-size="18" fill="$($theme.start)" font-weight="700">02</text>
+  <text x="577" y="274" font-family="'Source Sans 3', sans-serif" font-size="34" fill="#0f172a" font-weight="700">$($cards[1].title)</text>
+  <text x="577" y="316" font-family="'Source Sans 3', sans-serif" font-size="26" fill="#475569">$($cards[1].body)</text>
+  <text x="1012" y="234" font-family="'Source Sans 3', sans-serif" font-size="18" fill="$($theme.start)" font-weight="700">03</text>
+  <text x="1012" y="274" font-family="'Source Sans 3', sans-serif" font-size="34" fill="#0f172a" font-weight="700">$($cards[2].title)</text>
+  <text x="1012" y="316" font-family="'Source Sans 3', sans-serif" font-size="26" fill="#475569">$($cards[2].body)</text>
+  <text x="142" y="584" font-family="'Source Sans 3', sans-serif" font-size="18" fill="$($theme.start)" font-weight="700">04</text>
+  <text x="142" y="624" font-family="'Source Sans 3', sans-serif" font-size="34" fill="#0f172a" font-weight="700">$($cards[3].title)</text>
+  <text x="142" y="666" font-family="'Source Sans 3', sans-serif" font-size="26" fill="#475569">$($cards[3].body)</text>
+  <text x="577" y="584" font-family="'Source Sans 3', sans-serif" font-size="18" fill="$($theme.start)" font-weight="700">05</text>
+  <text x="577" y="624" font-family="'Source Sans 3', sans-serif" font-size="34" fill="#0f172a" font-weight="700">$($cards[4].title)</text>
+  <text x="577" y="666" font-family="'Source Sans 3', sans-serif" font-size="26" fill="#475569">$($cards[4].body)</text>
+  <text x="1012" y="584" font-family="'Source Sans 3', sans-serif" font-size="18" fill="$($theme.start)" font-weight="700">06</text>
+  <text x="1012" y="624" font-family="'Source Sans 3', sans-serif" font-size="34" fill="#0f172a" font-weight="700">$($cards[5].title)</text>
+  <text x="1012" y="666" font-family="'Source Sans 3', sans-serif" font-size="26" fill="#475569">$($cards[5].body)</text>
+</svg>
+"@
+}
+
+function New-WorkflowSvg {
+  param([hashtable]$spec)
+  $steps = $spec.steps
+  $theme = Get-DiagramTheme -Focus $spec.focus
+  return @"
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="520" viewBox="0 0 1400 520" role="img" aria-labelledby="title desc">
+  <title>$($spec.title)</title>
+  <desc>$($spec.subtitle)</desc>
+  <defs>
+    <linearGradient id="flowbg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="$($theme.start)"/>
+      <stop offset="100%" stop-color="$($theme.finish)"/>
+    </linearGradient>
+    <linearGradient id="flowcard" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.98"/>
+      <stop offset="100%" stop-color="$($theme.panel)" stop-opacity="0.98"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="520" rx="30" fill="#f8fafc"/>
+  <rect x="24" y="24" width="1352" height="472" rx="28" fill="url(#flowbg)"/>
+  <text x="76" y="86" font-family="'Merriweather', serif" font-size="38" fill="#ffffff" font-weight="700">$($spec.title)</text>
+  <text x="76" y="122" font-family="'Source Sans 3', sans-serif" font-size="22" fill="$($theme.edge)">$($spec.subtitle)</text>
+  <path d="M262 284 H336" stroke="$($theme.edge)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M472 284 H546" stroke="$($theme.edge)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M682 284 H756" stroke="$($theme.edge)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M892 284 H966" stroke="$($theme.edge)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M1102 284 H1176" stroke="$($theme.edge)" stroke-width="8" stroke-linecap="round"/>
+  <rect x="82" y="190" width="180" height="180" rx="26" fill="url(#flowcard)"/>
+  <rect x="292" y="190" width="180" height="180" rx="26" fill="url(#flowcard)"/>
+  <rect x="502" y="190" width="180" height="180" rx="26" fill="url(#flowcard)"/>
+  <rect x="712" y="190" width="180" height="180" rx="26" fill="url(#flowcard)"/>
+  <rect x="922" y="190" width="180" height="180" rx="26" fill="url(#flowcard)"/>
+  <rect x="1132" y="190" width="180" height="180" rx="26" fill="url(#flowcard)"/>
+  <text x="106" y="236" font-family="'IBM Plex Mono', monospace" font-size="22" fill="$($theme.start)" font-weight="700">STEP 1</text>
+  <text x="316" y="236" font-family="'IBM Plex Mono', monospace" font-size="22" fill="$($theme.start)" font-weight="700">STEP 2</text>
+  <text x="526" y="236" font-family="'IBM Plex Mono', monospace" font-size="22" fill="$($theme.start)" font-weight="700">STEP 3</text>
+  <text x="736" y="236" font-family="'IBM Plex Mono', monospace" font-size="22" fill="$($theme.start)" font-weight="700">STEP 4</text>
+  <text x="946" y="236" font-family="'IBM Plex Mono', monospace" font-size="22" fill="$($theme.start)" font-weight="700">STEP 5</text>
+  <text x="1156" y="236" font-family="'IBM Plex Mono', monospace" font-size="22" fill="$($theme.start)" font-weight="700">STEP 6</text>
+  <text x="106" y="288" font-family="'Source Sans 3', sans-serif" font-size="22" fill="#0f172a" font-weight="700">$($steps[0])</text>
+  <text x="316" y="288" font-family="'Source Sans 3', sans-serif" font-size="22" fill="#0f172a" font-weight="700">$($steps[1])</text>
+  <text x="526" y="288" font-family="'Source Sans 3', sans-serif" font-size="22" fill="#0f172a" font-weight="700">$($steps[2])</text>
+  <text x="736" y="288" font-family="'Source Sans 3', sans-serif" font-size="22" fill="#0f172a" font-weight="700">$($steps[3])</text>
+  <text x="946" y="288" font-family="'Source Sans 3', sans-serif" font-size="22" fill="#0f172a" font-weight="700">$($steps[4])</text>
+  <text x="1156" y="288" font-family="'Source Sans 3', sans-serif" font-size="22" fill="#0f172a" font-weight="700">$($steps[5])</text>
+</svg>
+"@
+}
+
+function Get-ArchitectureDetail {
+  param([string]$Focus)
+  switch ($Focus) {
+    'architecture' { return 'Salesforce describes Agentforce as an AI agent platform that combines topics, instructions, actions, and enterprise data. The Atlas Reasoning Engine uses a reason-act-observe style loop, topic classification, and access to grounded data so the agent can adapt as the conversation changes instead of executing one brittle linear plan.' }
+    'first-agent' { return 'A first agent should be designed around one topic and a small action set. Salesforce guidance and workshops consistently show that early success comes from constrained scope, grounded context, and testable actions rather than a wide, loosely controlled assistant.' }
+    'prompt-builder' { return 'Prompt Builder is the authoring surface where your system instructions, merge fields, Flow outputs, related lists, and Apex data providers become a reusable prompt template. Salesforce positions it as the bridge between trusted CRM context and repeatable generative behaviors.' }
+    'apex-actions' { return 'The Agentforce Actions guide and invocable-method documentation make the boundary clear: the agent can select an action, but Apex owns the execution contract. In practice that means typed inputs, predictable outputs, validation, sharing-aware data access, and unit tests before the action is exposed to a topic.' }
+    'external-api' { return 'Recent Salesforce guidance on external service actions reduces the amount of boilerplate needed to call third-party APIs, but the architectural concerns remain the same: authenticated access, explicit schemas, stable output mapping, and a fallback path when the remote system is slow or unavailable.' }
+    'support-agent' { return 'Support agents are effective when they combine topic selection with service context such as knowledge articles, case history, entitlement data, and escalation rules. Agentforce can treat handoff to a human as just another action, which lets service teams build a controlled transfer path instead of a dead-end failure state.' }
+    'security' { return 'Salesforce documents the Einstein Trust Layer as the security layer around generative experiences: grounded retrieval, masking of sensitive data, zero data retention agreements with third-party model providers, toxicity scoring, and audit trail support. Those controls belong in the architecture diagram, not as a footnote.' }
+    'data-cloud' { return 'Data Cloud strengthens Agentforce by giving the agent access to unified profiles, segments, and calculated insights instead of only local object views. The right pattern is to expose a curated profile story to the agent so it can reason with richer business context while operational writes still happen through governed platform actions.' }
+    'reasoning' { return 'Atlas reasoning is most useful when it is decomposed into inspectable stages: classify the request into a topic, retrieve trusted information, plan the next step, execute one tool or action, then reflect on the result. That is closer to the official reason-act-observe description than a one-shot prompt-response diagram.' }
+    'production' { return 'Salesforce DX guidance and newer Agentforce Builder workflows both point to the same production principle: agents are metadata and should move through source control, test environments, pilot cohorts, and monitored production releases with clear rollback options.' }
+  }
+}
+
+function Get-ConfigurationDiagramText {
+  param([string]$Focus)
+  switch ($Focus) {
+    'architecture' { return 'The sequence below reflects the path Salesforce teams usually follow when turning a conceptual agent into a governed runtime service: enable the platform foundations, model topics, bind data, expose actions, test the reasoning loop, and then launch with telemetry.' }
+    'first-agent' { return 'For a first build, the diagram deliberately emphasizes sequence. If the team adds actions or broad channel coverage before the topic and prompt are stable, troubleshooting becomes harder and pilot feedback becomes noisy.' }
+    'prompt-builder' { return 'Prompt Builder work improves when you move through a visible design loop: define the outcome, bind inputs, add grounded context, then test and revise before publishing. That order prevents teams from papering over grounding issues with longer instructions.' }
+    'apex-actions' { return 'The flow below treats an Apex action like a mini product. You define the business contract first, then implement and test the method, and only after that expose it as an agent capability.' }
+    'external-api' { return 'External API actions need an additional integration discipline around auth, schema, and timeout handling. The diagram below highlights those stages because most production issues appear there rather than in the prompt text.' }
+    'support-agent' { return 'A support agent becomes trustworthy when case data, knowledge, policy, and escalation are configured in a predictable order. The sequence below is designed to keep service quality ahead of automation breadth.' }
+    'security' { return 'Security setup is not a one-screen toggle. The workflow diagram emphasizes the real order of work: classify data, provision trust controls, restrict permissions, test adversarial prompts, and continuously review the audit evidence.' }
+    'data-cloud' { return 'The value of Data Cloud comes from curation, not volume. The workflow below focuses on resolution, published profile attributes, and validated freshness before those signals are allowed to shape agent decisions.' }
+    'reasoning' { return 'Reasoning systems fail through accumulation, so the diagram below breaks the flow into inspectable stages with an explicit validation step before the final response. That is the operational difference between a demo and a production agent.' }
+    'production' { return 'The production rollout flow makes release discipline visible: version assets, run evaluation packs, promote to a pilot, monitor live behavior, and be prepared to roll back. Agentforce behaves much better when those steps are explicit and repeatable.' }
+  }
+}
 
 function Get-IntroParagraphs {
   param([string]$Topic,[string]$Angle)
@@ -290,6 +673,9 @@ function New-ArticleBody {
   param($article)
 
   $intro = Get-IntroParagraphs -Topic $article.category -Angle "This guide focuses on the implementation tradeoffs, runtime boundaries, and delivery decisions that shape $($article.category.ToLower()) work in Agentforce"
+  $diagramSpec = Get-DiagramSpec -Focus $article.focus
+  $archFigure = Get-DiagramWebPath -article $article -type 'architecture'
+  $flowFigure = Get-DiagramWebPath -article $article -type 'workflow'
   $stepsHtml = '<ol>'
   foreach ($step in (Get-StepList -Focus $article.focus)) { $stepsHtml += "<li>$step</li>" }
   $stepsHtml += '</ol>'
@@ -299,8 +685,8 @@ function New-ArticleBody {
 
   return @"
 <section id="introduction"><h2>Introduction</h2><p>$($intro[0])</p><p>$($intro[1])</p><p>$($intro[2])</p></section>
-<section id="architecture"><h2>Architecture explanation</h2><p>$(Get-FocusLine -Focus $article.focus)</p><p>$($article.title) typically breaks into five layers. The experience layer receives user requests from channels such as Service Console, Experience Cloud, or Slack. The reasoning layer interprets the request, selects the right prompt, and coordinates the next step. The grounding layer retrieves trusted data from CRM objects, knowledge articles, Data Cloud, or approved documents. The action layer executes Flow, Apex, or API operations. The governance layer enforces trust controls such as permission boundaries, audit logs, and response quality checks.</p><p>These layers are useful because they help teams decide where a problem belongs. If the answer is wrong, the issue may sit in grounding. If the action is unsafe, the problem sits in permissions or execution validation. If the result is verbose or inconsistent, the issue is often in prompting or output schema. Separating the architecture this way keeps debugging concrete, which is essential when an implementation grows across multiple teams.</p><figure class="diagram"><img src="$($article.diagram)" alt="$($article.diagramAlt)" loading="lazy" /><figcaption>Reference diagram for the major runtime layers involved in $($article.title).</figcaption></figure><p>In enterprise delivery, it also helps to think about control planes versus data planes. The control plane contains metadata, prompts, access policy, model selection, testing, and release procedures. The data plane contains the live customer conversation, retrieved records, outbound actions, and operational telemetry. This distinction prevents teams from mixing authoring concerns with runtime concerns and makes promotion across sandboxes significantly easier.</p><blockquote>The most reliable Agentforce implementations keep the model responsible for reasoning and language, while deterministic platform services remain responsible for data integrity, approvals, and side effects.</blockquote></section>
-<section id="configuration"><h2>Step-by-step configuration</h2><p>Configuration work succeeds when the team treats Agentforce setup as a sequence of platform decisions rather than a single wizard. The steps below reflect the order that keeps dependencies visible and avoids rework later in the release.</p>$stepsHtml<p>$(Get-OpsParagraph -Focus $article.focus)</p></section>
+<section id="architecture"><h2>Architecture explanation</h2><p>$(Get-FocusLine -Focus $article.focus)</p><p>$(Get-ArchitectureDetail -Focus $article.focus)</p><p>$($article.title) works best when the architecture separates conversational intent from deterministic execution. Topics and instructions tell the agent what kind of work it is doing. Grounding layers bring in trusted business facts from Salesforce data, knowledge, Data Cloud, or external systems. Actions then convert the plan into platform work through Flow, Apex, or governed API calls. Trust controls wrap the entire path so data access, generated output, and side effects remain observable and policy-bound.</p><figure class="diagram"><img src="$archFigure" alt="$($diagramSpec.architecture.title)" loading="lazy" /><figcaption>$($diagramSpec.architecture.subtitle)</figcaption></figure><p>These layers are useful because they help teams decide where a problem belongs. If the answer is wrong, the issue may sit in grounding. If the action is unsafe, the problem sits in permissions or execution validation. If the result is verbose or inconsistent, the issue is often in prompting or output schema. Separating the architecture this way keeps debugging concrete, which is essential when an implementation grows across multiple teams.</p><p>In enterprise delivery, it also helps to think about control planes versus data planes. The control plane contains metadata, prompts, access policy, model selection, testing, and release procedures. The data plane contains the live customer conversation, retrieved records, outbound actions, and operational telemetry. This distinction prevents teams from mixing authoring concerns with runtime concerns and makes promotion across sandboxes significantly easier.</p><blockquote>The most reliable Agentforce implementations keep the model responsible for reasoning and language, while deterministic platform services remain responsible for data integrity, approvals, and side effects.</blockquote></section>
+<section id="configuration"><h2>Step-by-step configuration</h2><p>Configuration work succeeds when the team treats Agentforce setup as a sequence of platform decisions rather than a single wizard. The steps below reflect the order that keeps dependencies visible and avoids rework later in the release.</p><figure class="diagram"><img src="$flowFigure" alt="$($diagramSpec.workflow.title)" loading="lazy" /><figcaption>$($diagramSpec.workflow.subtitle)</figcaption></figure><p>$(Get-ConfigurationDiagramText -Focus $article.focus)</p>$stepsHtml<p>$(Get-OpsParagraph -Focus $article.focus)</p></section>
 <section id="code-examples"><h2>Code examples</h2><p>Enterprise teams need concrete implementation patterns because agent behavior eventually resolves into platform metadata and code. The examples below are representative patterns you can adapt inside a sandbox before promoting them through your normal release process.</p>$(Get-CodeBlock -Focus $article.focus)</section>
 <section id="operating-model"><h2>Operating model and delivery guidance</h2><p>Agentforce projects become easier to sustain when the delivery model is explicit. Administrators typically own prompt authoring, channel setup, and low-code automations. Developers own custom actions, advanced integrations, and test harnesses. Architects own the capability boundary, trust assumptions, and release model. Service or sales operations leaders own business acceptance and the definition of success.</p><p>That separation matters because long-term quality depends on ownership. If everyone can tune everything, nobody can explain why behavior changed. If prompts, flows, and actions are versioned with release notes, then a regression can be traced back to a concrete modification. This is the same discipline teams already apply to code; Agentforce just expands the surface area that needs that discipline.</p><p>It is also useful to define an evidence loop. Capture representative transcripts, measure action success rate, compare containment against downstream business metrics, and review edge cases at a fixed cadence. Over time, this evidence loop becomes more valuable than intuition. It tells you whether a prompt change improved quality, whether a new action reduced manual effort, and whether an escalation rule is too sensitive or too lax.</p><p>Teams should also decide how documentation, enablement, and support ownership work after launch. A static runbook for incident handling, a changelog for prompt revisions, and a named owner for every high-impact action are simple controls that prevent ambiguity when the agent starts operating at scale.</p><div class="callout"><strong>Implementation note:</strong> Document the acceptance criteria for every agent capability in plain language. If the team cannot explain when the agent should answer, act, ask a clarifying question, or escalate, production quality will drift.</div></section>
 <section id="best-practices"><h2>Best practices</h2>$bestHtml</section>
@@ -335,8 +721,10 @@ function New-ArticleHtml {
 "@
 }
 
-foreach ($diagram in $diagrams) {
-  Write-Utf8File -Path (Join-Path $diagramsDir $diagram.File) -Content ([string]::Format($diagramTemplate, $diagram.Params))
+foreach ($article in $articles) {
+  $spec = Get-DiagramSpec -Focus $article.focus
+  Write-Utf8File -Path (Join-Path $diagramsDir "$($article.slug)-architecture.svg") -Content (New-ArchitectureSvg -spec $spec.architecture)
+  Write-Utf8File -Path (Join-Path $diagramsDir "$($article.slug)-workflow.svg") -Content (New-WorkflowSvg -spec $spec.workflow)
 }
 
 Write-Utf8File -Path (Join-Path $assetsDir 'site.css') -Content $siteCss

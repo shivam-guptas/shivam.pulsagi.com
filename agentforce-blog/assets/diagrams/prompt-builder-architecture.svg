@@ -1,0 +1,47 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="860" viewBox="0 0 1400 860" role="img" aria-labelledby="title desc">
+  <title>Prompt Builder Composition</title>
+  <desc>Prompt templates combine instructions, grounded inputs, output shape, and evaluation.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#7c2d12"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.98"/>
+      <stop offset="100%" stop-color="#fff7ed" stop-opacity="0.98"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="860" rx="34" fill="#f8fafc"/>
+  <rect x="26" y="26" width="1348" height="808" rx="30" fill="url(#bg)"/>
+  <text x="78" y="92" font-family="'Merriweather', serif" font-size="42" fill="#ffffff" font-weight="700">Prompt Builder Composition</text>
+  <text x="78" y="132" font-family="'Source Sans 3', sans-serif" font-size="24" fill="#fed7aa">Prompt templates combine instructions, grounded inputs, output shape, and evaluation.</text>
+  <path d="M420 260 H560" stroke="#fed7aa" stroke-width="10" stroke-linecap="round"/>
+  <path d="M840 260 H980" stroke="#fed7aa" stroke-width="10" stroke-linecap="round"/>
+  <path d="M700 338 V472" stroke="#fed7aa" stroke-width="10" stroke-linecap="round"/>
+  <path d="M420 614 H560" stroke="#fed7aa" stroke-width="10" stroke-linecap="round"/>
+  <path d="M840 614 H980" stroke="#fed7aa" stroke-width="10" stroke-linecap="round"/>
+  <rect x="110" y="180" width="310" height="160" rx="28" fill="url(#panel)"/>
+  <rect x="545" y="180" width="310" height="160" rx="28" fill="url(#panel)"/>
+  <rect x="980" y="180" width="310" height="160" rx="28" fill="url(#panel)"/>
+  <rect x="110" y="530" width="310" height="160" rx="28" fill="url(#panel)"/>
+  <rect x="545" y="530" width="310" height="160" rx="28" fill="url(#panel)"/>
+  <rect x="980" y="530" width="310" height="160" rx="28" fill="url(#panel)"/>
+  <text x="142" y="234" font-family="'Source Sans 3', sans-serif" font-size="18" fill="#7c2d12" font-weight="700">01</text>
+  <text x="142" y="274" font-family="'Source Sans 3', sans-serif" font-size="34" fill="#0f172a" font-weight="700">Goal</text>
+  <text x="142" y="316" font-family="'Source Sans 3', sans-serif" font-size="26" fill="#475569">Business task and audience</text>
+  <text x="577" y="234" font-family="'Source Sans 3', sans-serif" font-size="18" fill="#7c2d12" font-weight="700">02</text>
+  <text x="577" y="274" font-family="'Source Sans 3', sans-serif" font-size="34" fill="#0f172a" font-weight="700">Instructions</text>
+  <text x="577" y="316" font-family="'Source Sans 3', sans-serif" font-size="26" fill="#475569">Role, tone, policies</text>
+  <text x="1012" y="234" font-family="'Source Sans 3', sans-serif" font-size="18" fill="#7c2d12" font-weight="700">03</text>
+  <text x="1012" y="274" font-family="'Source Sans 3', sans-serif" font-size="34" fill="#0f172a" font-weight="700">Inputs</text>
+  <text x="1012" y="316" font-family="'Source Sans 3', sans-serif" font-size="26" fill="#475569">Merge fields and variables</text>
+  <text x="142" y="584" font-family="'Source Sans 3', sans-serif" font-size="18" fill="#7c2d12" font-weight="700">04</text>
+  <text x="142" y="624" font-family="'Source Sans 3', sans-serif" font-size="34" fill="#0f172a" font-weight="700">Grounding</text>
+  <text x="142" y="666" font-family="'Source Sans 3', sans-serif" font-size="26" fill="#475569">Flow, Apex, related data</text>
+  <text x="577" y="584" font-family="'Source Sans 3', sans-serif" font-size="18" fill="#7c2d12" font-weight="700">05</text>
+  <text x="577" y="624" font-family="'Source Sans 3', sans-serif" font-size="34" fill="#0f172a" font-weight="700">Output</text>
+  <text x="577" y="666" font-family="'Source Sans 3', sans-serif" font-size="26" fill="#475569">Sections or JSON schema</text>
+  <text x="1012" y="584" font-family="'Source Sans 3', sans-serif" font-size="18" fill="#7c2d12" font-weight="700">06</text>
+  <text x="1012" y="624" font-family="'Source Sans 3', sans-serif" font-size="34" fill="#0f172a" font-weight="700">Evaluation</text>
+  <text x="1012" y="666" font-family="'Source Sans 3', sans-serif" font-size="26" fill="#475569">Test cases and revisions</text>
+</svg>

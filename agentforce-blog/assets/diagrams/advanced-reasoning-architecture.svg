@@ -1,0 +1,47 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="860" viewBox="0 0 1400 860" role="img" aria-labelledby="title desc">
+  <title>Advanced Reasoning Loop</title>
+  <desc>Atlas-style agent behavior works best when planning, acting, and checking are explicit stages.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#581c87"/>
+      <stop offset="100%" stop-color="#a21caf"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.98"/>
+      <stop offset="100%" stop-color="#faf5ff" stop-opacity="0.98"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="860" rx="34" fill="#f8fafc"/>
+  <rect x="26" y="26" width="1348" height="808" rx="30" fill="url(#bg)"/>
+  <text x="78" y="92" font-family="'Merriweather', serif" font-size="42" fill="#ffffff" font-weight="700">Advanced Reasoning Loop</text>
+  <text x="78" y="132" font-family="'Source Sans 3', sans-serif" font-size="24" fill="#f3e8ff">Atlas-style agent behavior works best when planning, acting, and checking are explicit stages.</text>
+  <path d="M420 260 H560" stroke="#f3e8ff" stroke-width="10" stroke-linecap="round"/>
+  <path d="M840 260 H980" stroke="#f3e8ff" stroke-width="10" stroke-linecap="round"/>
+  <path d="M700 338 V472" stroke="#f3e8ff" stroke-width="10" stroke-linecap="round"/>
+  <path d="M420 614 H560" stroke="#f3e8ff" stroke-width="10" stroke-linecap="round"/>
+  <path d="M840 614 H980" stroke="#f3e8ff" stroke-width="10" stroke-linecap="round"/>
+  <rect x="110" y="180" width="310" height="160" rx="28" fill="url(#panel)"/>
+  <rect x="545" y="180" width="310" height="160" rx="28" fill="url(#panel)"/>
+  <rect x="980" y="180" width="310" height="160" rx="28" fill="url(#panel)"/>
+  <rect x="110" y="530" width="310" height="160" rx="28" fill="url(#panel)"/>
+  <rect x="545" y="530" width="310" height="160" rx="28" fill="url(#panel)"/>
+  <rect x="980" y="530" width="310" height="160" rx="28" fill="url(#panel)"/>
+  <text x="142" y="234" font-family="'Source Sans 3', sans-serif" font-size="18" fill="#581c87" font-weight="700">01</text>
+  <text x="142" y="274" font-family="'Source Sans 3', sans-serif" font-size="34" fill="#0f172a" font-weight="700">Request</text>
+  <text x="142" y="316" font-family="'Source Sans 3', sans-serif" font-size="26" fill="#475569">User goal and context</text>
+  <text x="577" y="234" font-family="'Source Sans 3', sans-serif" font-size="18" fill="#581c87" font-weight="700">02</text>
+  <text x="577" y="274" font-family="'Source Sans 3', sans-serif" font-size="34" fill="#0f172a" font-weight="700">Topic</text>
+  <text x="577" y="316" font-family="'Source Sans 3', sans-serif" font-size="26" fill="#475569">Intent and policy selection</text>
+  <text x="1012" y="234" font-family="'Source Sans 3', sans-serif" font-size="18" fill="#581c87" font-weight="700">03</text>
+  <text x="1012" y="274" font-family="'Source Sans 3', sans-serif" font-size="34" fill="#0f172a" font-weight="700">Planner</text>
+  <text x="1012" y="316" font-family="'Source Sans 3', sans-serif" font-size="26" fill="#475569">Reasoning state and subgoals</text>
+  <text x="142" y="584" font-family="'Source Sans 3', sans-serif" font-size="18" fill="#581c87" font-weight="700">04</text>
+  <text x="142" y="624" font-family="'Source Sans 3', sans-serif" font-size="34" fill="#0f172a" font-weight="700">Tools</text>
+  <text x="142" y="666" font-family="'Source Sans 3', sans-serif" font-size="26" fill="#475569">Actions and retrieval steps</text>
+  <text x="577" y="584" font-family="'Source Sans 3', sans-serif" font-size="18" fill="#581c87" font-weight="700">05</text>
+  <text x="577" y="624" font-family="'Source Sans 3', sans-serif" font-size="34" fill="#0f172a" font-weight="700">Validation</text>
+  <text x="577" y="666" font-family="'Source Sans 3', sans-serif" font-size="26" fill="#475569">Check evidence and outcomes</text>
+  <text x="1012" y="584" font-family="'Source Sans 3', sans-serif" font-size="18" fill="#581c87" font-weight="700">06</text>
+  <text x="1012" y="624" font-family="'Source Sans 3', sans-serif" font-size="34" fill="#0f172a" font-weight="700">Response</text>
+  <text x="1012" y="666" font-family="'Source Sans 3', sans-serif" font-size="26" fill="#475569">Answer, clarify, or hand off</text>
+</svg>
