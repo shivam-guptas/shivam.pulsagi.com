@@ -1,0 +1,48 @@
+﻿{
+    "articles":  [
+                     {
+                         "file":  "agentforce-architecture.html",
+                         "title":  "What is Salesforce Agentforce - Complete Architecture Guide"
+                     },
+                     {
+                         "file":  "build-first-agent.html",
+                         "title":  "How to Build Your First AI Agent in Salesforce Agentforce"
+                     },
+                     {
+                         "file":  "prompt-builder.html",
+                         "title":  "Agentforce Prompt Builder Deep Dive"
+                     },
+                     {
+                         "file":  "agent-actions-apex.html",
+                         "title":  "Creating Custom Agent Actions with Apex"
+                     },
+                     {
+                         "file":  "external-api.html",
+                         "title":  "Integrating Agentforce with External APIs"
+                     },
+                     {
+                         "file":  "support-agent.html",
+                         "title":  "Building Autonomous Customer Support Agents"
+                     },
+                     {
+                         "file":  "security-governance.html",
+                         "title":  "Agentforce Security, Governance and Trust Layer"
+                     },
+                     {
+                         "file":  "data-cloud-agent.html",
+                         "title":  "Using Agentforce with Data Cloud"
+                     },
+                     {
+                         "file":  "advanced-reasoning.html",
+                         "title":  "Advanced Multi-Step AI Agent Reasoning"
+                     },
+                     {
+                         "file":  "production-deployment.html",
+                         "title":  "Deploying Agentforce to Production"
+                     }
+                 ],
+    "site":  "Salesforce Agentforce Blog",
+    "author":  "Shivam Gupta"
+}
+
+

@@ -76,13 +76,13 @@
   }
   </script>
 
-  <!-- JSON-LD: Blog (for upcoming articles) -->
+  <!-- JSON-LD: Blog -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Blog",
-    "name": "Shivam Gupta — Architecture Notes",
-    "url": "https://shivam.pulsagi.com/#articles",
+    "name": "Salesforce Agentforce Blog",
+    "url": "https://shivam.pulsagi.com/agentforce-blog/",
     "author": {
       "@type": "Person",
       "name": "Shivam Gupta"
@@ -523,7 +523,7 @@
           <strong>AI-assisted engineering</strong>.
         </p>
         <div class="hero-links">
-          <a href="#articles" class="btn btn-primary">Read Articles</a>
+          <a href="/agentforce-blog/" class="btn btn-primary">Read Agentforce Blog</a>
           <a href="https://www.linkedin.com/in/shivam-guptas" class="btn btn-ghost" rel="noopener" target="_blank">LinkedIn</a>
         </div>
         
@@ -585,30 +585,38 @@
         <h2>Articles</h2>
       </div>
       <div class="articles-list">
-        <article class="article-card" itemscope itemtype="https://schema.org/BlogPosting">
+        <a class="article-card" href="/agentforce-blog/" itemscope itemtype="https://schema.org/Blog">
+          <span class="article-tag">Agentforce Blog</span>
+          <div class="article-content">
+            <h3 itemprop="headline">Salesforce Agentforce blog section</h3>
+            <p itemprop="description">A dedicated technical blog with 10 in-depth articles covering Agentforce architecture, prompt design, Apex actions, security, Data Cloud, reasoning, and production deployment.</p>
+            <div class="coming-soon">Open the full blog</div>
+          </div>
+        </a>
+        <a class="article-card" href="/agentforce-blog/articles/agentforce-architecture.html" itemscope itemtype="https://schema.org/BlogPosting">
           <span class="article-tag">Architecture</span>
           <div class="article-content">
-            <h3 itemprop="headline">Designing scalable Salesforce solutions without overengineering</h3>
-            <p itemprop="description">How to balance flexibility, maintainability, and business speed when building on Salesforce.</p>
-            <div class="coming-soon">Coming soon</div>
+            <h3 itemprop="headline">What is Salesforce Agentforce - Complete Architecture Guide</h3>
+            <p itemprop="description">A complete technical guide to Agentforce architecture, runtime components, enterprise grounding, and delivery patterns.</p>
+            <div class="coming-soon">Read article</div>
           </div>
-        </article>
-        <article class="article-card" itemscope itemtype="https://schema.org/BlogPosting">
-          <span class="article-tag">Automation</span>
+        </a>
+        <a class="article-card" href="/agentforce-blog/articles/build-first-agent.html" itemscope itemtype="https://schema.org/BlogPosting">
+          <span class="article-tag">Implementation</span>
           <div class="article-content">
-            <h3 itemprop="headline">Where AI tools actually help in modern delivery workflows</h3>
-            <p itemprop="description">Practical ways to use AI in coding, documentation, and implementation support.</p>
-            <div class="coming-soon">Coming soon</div>
+            <h3 itemprop="headline">How to Build Your First AI Agent in Salesforce Agentforce</h3>
+            <p itemprop="description">Step-by-step guidance for creating, grounding, testing, and deploying a first Agentforce implementation.</p>
+            <div class="coming-soon">Read article</div>
           </div>
-        </article>
-        <article class="article-card" itemscope itemtype="https://schema.org/BlogPosting">
-          <span class="article-tag">Systems</span>
+        </a>
+        <a class="article-card" href="/agentforce-blog/articles/production-deployment.html" itemscope itemtype="https://schema.org/BlogPosting">
+          <span class="article-tag">Production</span>
           <div class="article-content">
-            <h3 itemprop="headline">Architecture decisions that make enterprise platforms easier to evolve</h3>
-            <p itemprop="description">A simple approach to reducing complexity and improving long-term delivery quality.</p>
-            <div class="coming-soon">Coming soon</div>
+            <h3 itemprop="headline">Deploying Agentforce to Production</h3>
+            <p itemprop="description">A production-readiness guide covering promotion strategy, testing, monitoring, rollback, and operational ownership.</p>
+            <div class="coming-soon">Read article</div>
           </div>
-        </article>
+        </a>
       </div>
     </section>
 
