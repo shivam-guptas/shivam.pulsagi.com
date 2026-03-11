@@ -547,6 +547,86 @@ function Get-StepList {
 function Get-CodeBlock {
   param([string]$Focus)
   switch ($Focus) {
+    'architecture' {
+      return @"
+<h3>Agent definition metadata example</h3>
+<pre><code class="language-json">{
+  "agent": "RevenueOperationsAdvisor",
+  "channel": "SalesConsole",
+  "topics": [
+    "pipeline-inspection",
+    "opportunity-risk-review"
+  ],
+  "grounding": {
+    "objects": ["Opportunity", "Account", "Task"],
+    "knowledgeSources": ["Sales Playbooks"],
+    "dataCloudSignals": ["renewal-propensity", "product-adoption-score"]
+  },
+  "actions": [
+    "flow.create_follow_up_task",
+    "apex.get_opportunity_risk_summary",
+    "api.fetch_product_usage"
+  ],
+  "trustLayer": {
+    "maskFields": ["AnnualRevenue", "PersonalEmail"],
+    "auditEnabled": true,
+    "humanEscalationTopic": "commercial-approval"
+  }
+}</code></pre>
+<p>This kind of artifact is useful in architecture workshops because it makes the runtime surface explicit: topics, grounding paths, action contracts, and trust controls are all visible in one place.</p>
+<h3>Topic routing outline</h3>
+<pre><code class="language-yaml">topics:
+  - name: pipeline-inspection
+    intentSignals:
+      - "review stalled deals"
+      - "show at-risk opportunities"
+    allowedActions:
+      - get_opportunity_risk_summary
+      - create_follow_up_task
+  - name: commercial-approval
+    intentSignals:
+      - "discount approval"
+      - "pricing exception"
+    allowedActions:
+      - request_manager_approval
+      - summarize_account_context</code></pre>
+"@
+    }
+    'first-agent' {
+      return @"
+<h3>First agent prompt contract</h3>
+<pre><code class="language-json">{
+  "topic": "account-briefing",
+  "goal": "Prepare a concise account summary before a seller starts outreach.",
+  "inputs": {
+    "accountId": "{!$Record.Id}",
+    "openOpportunities": "{!Get_Open_Opportunities}",
+    "recentActivities": "{!Get_Recent_Activities}"
+  },
+  "outputSchema": {
+    "summary": "string",
+    "risks": ["string"],
+    "nextAction": "string"
+  },
+  "fallback": "If recent activities are missing, ask the user whether to continue with CRM-only context."
+}</code></pre>
+<h3>Flow action for follow-up task</h3>
+<pre><code class="language-xml">&lt;Flow xmlns="http://soap.sforce.com/2006/04/metadata"&gt;
+  &lt;recordCreates&gt;
+    &lt;name&gt;CreateFollowUpTask&lt;/name&gt;
+    &lt;label&gt;Create Follow-Up Task&lt;/label&gt;
+    &lt;inputAssignments&gt;
+      &lt;field&gt;WhatId&lt;/field&gt;
+      &lt;value&gt;&lt;elementReference&gt;$Record.Id&lt;/elementReference&gt;&lt;/value&gt;
+    &lt;/inputAssignments&gt;
+    &lt;inputAssignments&gt;
+      &lt;field&gt;Subject&lt;/field&gt;
+      &lt;value&gt;&lt;stringValue&gt;Agentforce follow-up&lt;/stringValue&gt;&lt;/value&gt;
+    &lt;/inputAssignments&gt;
+  &lt;/recordCreates&gt;
+&lt;/Flow&gt;</code></pre>
+"@
+    }
     'apex-actions' {
       return @"
 <h3>Custom Apex action example</h3>
@@ -653,6 +733,181 @@ Output format:
 }</code></pre>
 "@
     }
+    'support-agent' {
+      return @"
+<h3>Case resolution prompt example</h3>
+<pre><code class="language-text">Role:
+You are a service resolution agent assisting support representatives.
+
+Resolution policy:
+- Ground responses in case history, entitlement data, and approved knowledge.
+- If confidence is low or the customer requests an exception, escalate.
+- Never promise credits, replacements, or SLA changes unless an action confirms eligibility.
+
+Inputs:
+- caseSummary
+- entitlementSnapshot
+- knowledgeMatches
+- sentimentSignal
+
+Output:
+1. Verified issue summary
+2. Recommended next step
+3. Escalation reason, if needed
+4. Customer-safe response draft</code></pre>
+<h3>Case update action payload</h3>
+<pre><code class="language-json">{
+  "action": "updateCaseStatus",
+  "inputs": {
+    "caseId": "{!Case.Id}",
+    "status": "Waiting on Customer",
+    "internalComment": "Agentforce recommended troubleshooting step and sent customer-safe summary."
+  },
+  "guardrails": {
+    "allowedStatuses": ["New", "Working", "Waiting on Customer"],
+    "requiresEscalationForPriority": ["High", "Critical"]
+  }
+}</code></pre>
+"@
+    }
+    'security' {
+      return @"
+<h3>Trust policy configuration example</h3>
+<pre><code class="language-json">{
+  "policyName": "service-agentforce-production",
+  "promptDefense": {
+    "blockPromptInjection": true,
+    "refuseCredentialRequests": true
+  },
+  "dataControls": {
+    "maskFields": ["Contact.Email", "Case.Credit_Card_Last4__c"],
+    "allowKnowledgeOnlyForGuests": true
+  },
+  "outputControls": {
+    "toxicityThreshold": 0.2,
+    "requiresCitationForPolicyAnswers": true
+  },
+  "audit": {
+    "storePromptHash": true,
+    "logActionInvocations": true
+  }
+}</code></pre>
+<h3>Permission set outline</h3>
+<pre><code class="language-yaml">permissionSet: Agentforce_Service_Runtime
+objectAccess:
+  Case: Read, Edit
+  Knowledge__kav: Read
+  Contact: Read
+fieldRestrictions:
+  Contact.PersonEmail: masked
+  Payment_Profile__c.Token__c: no-access
+allowedActions:
+  - summarize_case
+  - create_follow_up_task
+  - escalate_case</code></pre>
+"@
+    }
+    'data-cloud' {
+      return @"
+<h3>Grounding profile payload example</h3>
+<pre><code class="language-json">{
+  "unifiedIndividualId": "UID-10294",
+  "profileSummary": {
+    "lifetimeValue": 148000,
+    "renewalPropensity": 0.84,
+    "productAdoptionScore": 73,
+    "serviceTier": "Premier"
+  },
+  "segments": [
+    "high-expansion-potential",
+    "renewal-in-next-90-days"
+  ],
+  "freshness": {
+    "profileLastUpdated": "2026-03-10T18:05:00Z",
+    "usageAggregationWindow": "7d"
+  }
+}</code></pre>
+<h3>Prompt binding example</h3>
+<pre><code class="language-text">Use the unified profile only for context and recommendation quality.
+
+Customer profile:
+{!DataCloud.ProfileSummary}
+
+Calculated insights:
+{!DataCloud.Insights}
+
+Rules:
+- explain recommendations using profile evidence
+- do not expose hidden segment labels to customers
+- if freshness is older than 24 hours, mention that data may be delayed</code></pre>
+"@
+    }
+    'reasoning' {
+      return @"
+<h3>Multi-step reasoning state example</h3>
+<pre><code class="language-json">{
+  "request": "Prepare a renewal risk assessment and recommend the next action.",
+  "state": {
+    "topic": "renewal-risk-review",
+    "subgoals": [
+      "retrieve current renewal opportunity",
+      "check product adoption trend",
+      "identify unresolved support issues"
+    ],
+    "completed": [],
+    "pendingValidation": []
+  }
+}</code></pre>
+<h3>Intermediate validation schema</h3>
+<pre><code class="language-json">{
+  "evidence": [
+    {
+      "source": "Opportunity",
+      "recordId": "006xx000004TQ9A",
+      "claim": "Renewal closes in 21 days"
+    }
+  ],
+  "decision": "Recommend executive outreach",
+  "validation": {
+    "missingRequiredEvidence": false,
+    "humanApprovalRequired": true
+  }
+}</code></pre>
+"@
+    }
+    'production' {
+      return @"
+<h3>Deployment manifest example</h3>
+<pre><code class="language-yaml">release: agentforce-wave-3
+environments:
+  - name: uat
+    prompts:
+      - support-resolution-v5
+      - escalation-summary-v3
+    actions:
+      - update_case_status
+      - get_shipment_status
+  - name: production
+    rollout: canary
+    pilotUsers:
+      - service-ops-supervisors
+      - tier2-support</code></pre>
+<h3>Smoke evaluation pack</h3>
+<pre><code class="language-json">{
+  "suite": "production-readiness",
+  "tests": [
+    "case-summary-quality",
+    "escalation-policy-compliance",
+    "shipment-api-timeout-fallback",
+    "pii-redaction-check"
+  ],
+  "passCriteria": {
+    "minimumSuccessRate": 0.95,
+    "zeroCriticalPolicyViolations": true
+  }
+}</code></pre>
+"@
+    }
     default {
       return @"
 <h3>Flow integration example</h3>
@@ -683,6 +938,22 @@ Context:
 {!policySummary}</code></pre>
 "@
     }
+  }
+}
+
+function Get-CodeLead {
+  param([string]$Focus)
+  switch ($Focus) {
+    'architecture' { return 'The examples here focus on architectural artifacts rather than executable business logic, because the first challenge is making the agent surface explicit and governable.' }
+    'first-agent' { return 'For a first implementation, the most useful examples are a tight prompt contract and a single low-risk automation that proves the agent can both reason and act.' }
+    'prompt-builder' { return 'Prompt Builder work lives at the boundary between language design and runtime data binding, so the examples below show both template structure and evaluation discipline.' }
+    'apex-actions' { return 'Custom Apex actions should look like stable service contracts. The code below shows that pattern with explicit validation, predictable output, and test coverage.' }
+    'external-api' { return 'External integrations are where reliability issues usually appear first. These examples focus on auth, timeout handling, and deterministic response mapping.' }
+    'support-agent' { return 'Support implementations need policy-aware prompts and tightly scoped operational updates. The examples below reflect that service-first design.' }
+    'security' { return 'Security examples should make controls inspectable. The snippets below show policy shape, masking expectations, and permission boundaries rather than generic prose.' }
+    'data-cloud' { return 'With Data Cloud, the key is not dumping more data into the model. The examples show how to pass curated profile signals and explain freshness constraints.' }
+    'reasoning' { return 'Advanced reasoning becomes manageable when state and validation are structured. These examples show the intermediate artifacts that make multi-step execution inspectable.' }
+    'production' { return 'Production readiness depends on release metadata and evaluation packs as much as on prompts and actions. These examples show the artifacts teams should promote and verify.' }
   }
 }
 
@@ -764,7 +1035,7 @@ function New-ArticleBody {
 <section id="introduction"><h2>Introduction</h2><p>$($intro[0])</p><p>$($intro[1])</p><p>$($intro[2])</p></section>
 <section id="architecture"><h2>Architecture explanation</h2><p>$(Get-FocusLine -Focus $article.focus)</p><p>$(Get-ArchitectureDetail -Focus $article.focus)</p><p>$($article.title) works best when the architecture separates conversational intent from deterministic execution. Topics and instructions tell the agent what kind of work it is doing. Grounding layers bring in trusted business facts from Salesforce data, knowledge, Data Cloud, or external systems. Actions then convert the plan into platform work through Flow, Apex, or governed API calls. Trust controls wrap the entire path so data access, generated output, and side effects remain observable and policy-bound.</p><figure class="diagram"><img src="$archFigure" alt="$($diagramSpec.architecture.title)" loading="lazy" /><figcaption>$($diagramSpec.architecture.subtitle)</figcaption></figure><p>These layers are useful because they help teams decide where a problem belongs. If the answer is wrong, the issue may sit in grounding. If the action is unsafe, the problem sits in permissions or execution validation. If the result is verbose or inconsistent, the issue is often in prompting or output schema. Separating the architecture this way keeps debugging concrete, which is essential when an implementation grows across multiple teams.</p><p>In enterprise delivery, it also helps to think about control planes versus data planes. The control plane contains metadata, prompts, access policy, model selection, testing, and release procedures. The data plane contains the live customer conversation, retrieved records, outbound actions, and operational telemetry. This distinction prevents teams from mixing authoring concerns with runtime concerns and makes promotion across sandboxes significantly easier.</p><blockquote>The most reliable Agentforce implementations keep the model responsible for reasoning and language, while deterministic platform services remain responsible for data integrity, approvals, and side effects.</blockquote></section>
 <section id="configuration"><h2>Step-by-step configuration</h2><p>Configuration work succeeds when the team treats Agentforce setup as a sequence of platform decisions rather than a single wizard. The steps below reflect the order that keeps dependencies visible and avoids rework later in the release.</p><figure class="diagram"><img src="$flowFigure" alt="$($diagramSpec.workflow.title)" loading="lazy" /><figcaption>$($diagramSpec.workflow.subtitle)</figcaption></figure><p>$(Get-ConfigurationDiagramText -Focus $article.focus)</p>$stepsHtml<p>$(Get-OpsParagraph -Focus $article.focus)</p></section>
-<section id="code-examples"><h2>Code examples</h2><p>Enterprise teams need concrete implementation patterns because agent behavior eventually resolves into platform metadata and code. The examples below are representative patterns you can adapt inside a sandbox before promoting them through your normal release process.</p>$(Get-CodeBlock -Focus $article.focus)</section>
+<section id="code-examples"><h2>Code examples</h2><p>Enterprise teams need concrete implementation patterns because agent behavior eventually resolves into platform metadata and code. $(Get-CodeLead -Focus $article.focus)</p>$(Get-CodeBlock -Focus $article.focus)</section>
 <section id="operating-model"><h2>Operating model and delivery guidance</h2><p>Agentforce projects become easier to sustain when the delivery model is explicit. Administrators typically own prompt authoring, channel setup, and low-code automations. Developers own custom actions, advanced integrations, and test harnesses. Architects own the capability boundary, trust assumptions, and release model. Service or sales operations leaders own business acceptance and the definition of success.</p><p>That separation matters because long-term quality depends on ownership. If everyone can tune everything, nobody can explain why behavior changed. If prompts, flows, and actions are versioned with release notes, then a regression can be traced back to a concrete modification. This is the same discipline teams already apply to code; Agentforce just expands the surface area that needs that discipline.</p><p>It is also useful to define an evidence loop. Capture representative transcripts, measure action success rate, compare containment against downstream business metrics, and review edge cases at a fixed cadence. Over time, this evidence loop becomes more valuable than intuition. It tells you whether a prompt change improved quality, whether a new action reduced manual effort, and whether an escalation rule is too sensitive or too lax.</p><p>Teams should also decide how documentation, enablement, and support ownership work after launch. A static runbook for incident handling, a changelog for prompt revisions, and a named owner for every high-impact action are simple controls that prevent ambiguity when the agent starts operating at scale.</p><div class="callout"><strong>Implementation note:</strong> Document the acceptance criteria for every agent capability in plain language. If the team cannot explain when the agent should answer, act, ask a clarifying question, or escalate, production quality will drift.</div></section>
 <section id="best-practices"><h2>Best practices</h2>$bestHtml</section>
 <section id="conclusion"><h2>Conclusion</h2><p>$(Get-ConclusionParagraph -Focus $article.focus)</p><p>For Salesforce teams, the practical lesson is consistent: start from business flow, ground the model on trusted enterprise context, expose only the actions you can govern, and measure what the agent actually changes in production. That is how Agentforce becomes a durable platform capability instead of a short-lived proof of concept.</p></section>
