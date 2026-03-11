@@ -1,0 +1,39 @@
+# Shivam Gupta
+
+> Salesforce Architect and Founder at Pulsagi. Designing scalable systems, modern delivery, and practical automation.
+
+## Identity
+
+- **Full Name**: Shivam Gupta
+- **Role**: Salesforce Architect & Founder
+- **Website**: https://shivam.pulsagi.com
+- **Company**: Pulsagi (https://pulsagi.com)
+- **LinkedIn**: https://www.linkedin.com/in/shivam-guptas
+- **Email**: er.shivam.guptas@gmail.com
+
+## Expertise
+
+Shivam Gupta is a Salesforce Architect with deep experience in enterprise system design, scalable platform architecture, and AI-assisted engineering. He builds and writes about:
+
+- **Salesforce Architecture**: Solution design, scalable patterns, integration thinking, LWC, reusable components
+- **System & Delivery Thinking**: Translating business goals into practical architecture with clarity and maintainability
+- **AI-Assisted Engineering**: Using Codex, Claude, and Agentforce to accelerate development, documentation, and automation
+
+## Writing & Articles
+
+Shivam publishes architecture notes and practical learnings at https://shivam.pulsagi.com/#articles
+
+Upcoming topics:
+- Designing scalable Salesforce solutions without overengineering
+- Where AI tools actually help in modern delivery workflows
+- Architecture decisions that make enterprise platforms easier to evolve
+
+## Tools & Workflow
+
+- **Codex**: Code acceleration and implementation exploration
+- **Claude**: Reasoning, structuring ideas, technical planning
+- **Agentforce**: Workflow automation and enterprise agent experiences
+
+## About Pulsagi
+
+Pulsagi is Shivam Gupta's company, building AI infrastructure for the next generation — fast, modern, and built to scale. Website: https://pulsagi.com
