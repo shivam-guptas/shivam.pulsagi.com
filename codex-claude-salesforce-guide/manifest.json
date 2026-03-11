@@ -1,0 +1,45 @@
+﻿{
+    "title":  "How Codex and Claude Can Be Used End-to-End in Salesforce: Strategy, Use Cases, Prompts, Governance, and Enterprise Implementation Guide",
+    "author":  "Shivam Gupta",
+    "website":  "pulsagi.com",
+    "format":  "markdown",
+    "entry":  "index.md",
+    "audience":  [
+                     "Salesforce Architects",
+                     "Developers",
+                     "Admins",
+                     "Business Analysts",
+                     "QA/Test Engineers",
+                     "DevOps/Release Managers",
+                     "Project Managers",
+                     "Support Teams",
+                     "Leadership"
+                 ],
+    "html_entry":  "index.html",
+    "pages":  [
+                  {
+                      "file":  "pages/overview.html",
+                      "title":  "Overview, Comparison, and Lifecycle"
+                  },
+                  {
+                      "file":  "pages/discovery-and-architecture.html",
+                      "title":  "Discovery and Architecture"
+                  },
+                  {
+                      "file":  "pages/admin-development-and-automation.html",
+                      "title":  "Admin, Development, and Automation"
+                  },
+                  {
+                      "file":  "pages/integrations-quality-and-delivery.html",
+                      "title":  "Integrations, Quality, and Delivery"
+                  },
+                  {
+                      "file":  "pages/documentation-operations-and-prompts.html",
+                      "title":  "Documentation, Operations, and Prompt Library"
+                  },
+                  {
+                      "file":  "pages/governance-roadmap-and-appendices.html",
+                      "title":  "Governance, Roadmap, and Operating Model"
+                  }
+              ]
+}
