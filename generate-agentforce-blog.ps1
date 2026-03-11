@@ -290,110 +290,187 @@ function Get-DiagramSpec {
   }
 }
 
+function Escape-SvgText {
+  param([string]$Text)
+  return [System.Security.SecurityElement]::Escape($Text)
+}
+
+function New-SvgTspans {
+  param(
+    [string]$Text,
+    [int]$X,
+    [int]$Y,
+    [int]$MaxChars,
+    [int]$LineHeight
+  )
+
+  $words = (Escape-SvgText $Text) -split '\s+'
+  $lines = New-Object System.Collections.Generic.List[string]
+  $current = ''
+
+  foreach ($word in $words) {
+    if ([string]::IsNullOrWhiteSpace($current)) {
+      $current = $word
+      continue
+    }
+
+    if ((($current + ' ' + $word).Length) -le $MaxChars) {
+      $current = $current + ' ' + $word
+    }
+    else {
+      $lines.Add($current)
+      $current = $word
+    }
+  }
+
+  if (-not [string]::IsNullOrWhiteSpace($current)) {
+    $lines.Add($current)
+  }
+
+  $index = 0
+  return (($lines | ForEach-Object {
+    $dy = if ($index -eq 0) { 0 } else { $LineHeight }
+    $value = "<tspan x=`"$X`" dy=`"$dy`">$_</tspan>"
+    $index += 1
+    $value
+  }) -join '')
+}
+
 function New-ArchitectureSvg {
   param([hashtable]$spec)
-  $cards = $spec.cards
+
   $theme = Get-DiagramTheme -Focus $spec.focus
+  $positions = @(
+    @{ x = 104; y = 198 },
+    @{ x = 544; y = 198 },
+    @{ x = 984; y = 198 },
+    @{ x = 104; y = 516 },
+    @{ x = 544; y = 516 },
+    @{ x = 984; y = 516 }
+  )
+  $connectors = @(
+    'M414 292 H544',
+    'M854 292 H984',
+    'M700 376 V516',
+    'M414 610 H544',
+    'M854 610 H984'
+  )
+
+  $cardMarkup = for ($i = 0; $i -lt $spec.cards.Count; $i++) {
+    $card = $spec.cards[$i]
+    $pos = $positions[$i]
+    $badgeX = $pos.x + 42
+    $badgeY = $pos.y + 40
+    $titleX = $pos.x + 84
+    $titleY = $pos.y + 78
+    $bodyX = $titleX
+    $bodyY = $pos.y + 120
+@"
+  <g>
+    <rect x="$($pos.x)" y="$($pos.y)" width="312" height="176" rx="28" fill="url(#panel)" stroke="rgba(15,23,42,0.08)" filter="url(#shadow)"/>
+    <rect x="$($pos.x + 18)" y="$($pos.y + 18)" width="276" height="140" rx="22" fill="rgba(255,255,255,0.56)" stroke="rgba(255,255,255,0.5)"/>
+    <circle cx="$badgeX" cy="$badgeY" r="20" fill="$($theme.start)"/>
+    <text x="$($badgeX - 6)" y="$($badgeY + 6)" font-family="'IBM Plex Mono', monospace" font-size="16" fill="#ffffff" font-weight="700">$($i + 1)</text>
+    <text x="$titleX" y="$titleY" font-family="'Source Sans 3', sans-serif" font-size="31" fill="#0f172a" font-weight="700">$(Escape-SvgText $card.title)</text>
+    <text x="$bodyX" y="$bodyY" font-family="'Source Sans 3', sans-serif" font-size="22" fill="#475569">$(New-SvgTspans -Text $card.body -X $bodyX -Y $bodyY -MaxChars 23 -LineHeight 28)</text>
+  </g>
+"@
+  }
+
+  $connectorMarkup = $connectors | ForEach-Object {
+    "  <path d=""$_"" stroke=""$($theme.edge)"" stroke-width=""10"" stroke-linecap=""round"" marker-end=""url(#arrow)""/>"
+  }
+
   return @"
 <svg xmlns="http://www.w3.org/2000/svg" width="1400" height="860" viewBox="0 0 1400 860" role="img" aria-labelledby="title desc">
-  <title>$($spec.title)</title>
-  <desc>$($spec.subtitle)</desc>
+  <title>$(Escape-SvgText $spec.title)</title>
+  <desc>$(Escape-SvgText $spec.subtitle)</desc>
   <defs>
     <linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="100%">
       <stop offset="0%" stop-color="$($theme.start)"/>
       <stop offset="100%" stop-color="$($theme.finish)"/>
     </linearGradient>
     <linearGradient id="panel" x1="0%" x2="100%" y1="0%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.98"/>
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.99"/>
       <stop offset="100%" stop-color="$($theme.panel)" stop-opacity="0.98"/>
     </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#0f172a" flood-opacity="0.18"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="$($theme.edge)"/>
+    </marker>
   </defs>
   <rect width="1400" height="860" rx="34" fill="#f8fafc"/>
   <rect x="26" y="26" width="1348" height="808" rx="30" fill="url(#bg)"/>
-  <text x="78" y="92" font-family="'Merriweather', serif" font-size="42" fill="#ffffff" font-weight="700">$($spec.title)</text>
-  <text x="78" y="132" font-family="'Source Sans 3', sans-serif" font-size="24" fill="$($theme.edge)">$($spec.subtitle)</text>
-  <path d="M420 260 H560" stroke="$($theme.edge)" stroke-width="10" stroke-linecap="round"/>
-  <path d="M840 260 H980" stroke="$($theme.edge)" stroke-width="10" stroke-linecap="round"/>
-  <path d="M700 338 V472" stroke="$($theme.edge)" stroke-width="10" stroke-linecap="round"/>
-  <path d="M420 614 H560" stroke="$($theme.edge)" stroke-width="10" stroke-linecap="round"/>
-  <path d="M840 614 H980" stroke="$($theme.edge)" stroke-width="10" stroke-linecap="round"/>
-  <rect x="110" y="180" width="310" height="160" rx="28" fill="url(#panel)"/>
-  <rect x="545" y="180" width="310" height="160" rx="28" fill="url(#panel)"/>
-  <rect x="980" y="180" width="310" height="160" rx="28" fill="url(#panel)"/>
-  <rect x="110" y="530" width="310" height="160" rx="28" fill="url(#panel)"/>
-  <rect x="545" y="530" width="310" height="160" rx="28" fill="url(#panel)"/>
-  <rect x="980" y="530" width="310" height="160" rx="28" fill="url(#panel)"/>
-  <text x="142" y="234" font-family="'Source Sans 3', sans-serif" font-size="18" fill="$($theme.start)" font-weight="700">01</text>
-  <text x="142" y="274" font-family="'Source Sans 3', sans-serif" font-size="34" fill="#0f172a" font-weight="700">$($cards[0].title)</text>
-  <text x="142" y="316" font-family="'Source Sans 3', sans-serif" font-size="26" fill="#475569">$($cards[0].body)</text>
-  <text x="577" y="234" font-family="'Source Sans 3', sans-serif" font-size="18" fill="$($theme.start)" font-weight="700">02</text>
-  <text x="577" y="274" font-family="'Source Sans 3', sans-serif" font-size="34" fill="#0f172a" font-weight="700">$($cards[1].title)</text>
-  <text x="577" y="316" font-family="'Source Sans 3', sans-serif" font-size="26" fill="#475569">$($cards[1].body)</text>
-  <text x="1012" y="234" font-family="'Source Sans 3', sans-serif" font-size="18" fill="$($theme.start)" font-weight="700">03</text>
-  <text x="1012" y="274" font-family="'Source Sans 3', sans-serif" font-size="34" fill="#0f172a" font-weight="700">$($cards[2].title)</text>
-  <text x="1012" y="316" font-family="'Source Sans 3', sans-serif" font-size="26" fill="#475569">$($cards[2].body)</text>
-  <text x="142" y="584" font-family="'Source Sans 3', sans-serif" font-size="18" fill="$($theme.start)" font-weight="700">04</text>
-  <text x="142" y="624" font-family="'Source Sans 3', sans-serif" font-size="34" fill="#0f172a" font-weight="700">$($cards[3].title)</text>
-  <text x="142" y="666" font-family="'Source Sans 3', sans-serif" font-size="26" fill="#475569">$($cards[3].body)</text>
-  <text x="577" y="584" font-family="'Source Sans 3', sans-serif" font-size="18" fill="$($theme.start)" font-weight="700">05</text>
-  <text x="577" y="624" font-family="'Source Sans 3', sans-serif" font-size="34" fill="#0f172a" font-weight="700">$($cards[4].title)</text>
-  <text x="577" y="666" font-family="'Source Sans 3', sans-serif" font-size="26" fill="#475569">$($cards[4].body)</text>
-  <text x="1012" y="584" font-family="'Source Sans 3', sans-serif" font-size="18" fill="$($theme.start)" font-weight="700">06</text>
-  <text x="1012" y="624" font-family="'Source Sans 3', sans-serif" font-size="34" fill="#0f172a" font-weight="700">$($cards[5].title)</text>
-  <text x="1012" y="666" font-family="'Source Sans 3', sans-serif" font-size="26" fill="#475569">$($cards[5].body)</text>
+  <rect x="50" y="150" width="1300" height="626" rx="36" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.18)"/>
+  <text x="78" y="92" font-family="'Merriweather', serif" font-size="42" fill="#ffffff" font-weight="700">$(Escape-SvgText $spec.title)</text>
+  <text x="78" y="132" font-family="'Source Sans 3', sans-serif" font-size="24" fill="$($theme.edge)">$(Escape-SvgText $spec.subtitle)</text>
+$($connectorMarkup -join "`n")
+$($cardMarkup -join "`n")
 </svg>
 "@
 }
 
 function New-WorkflowSvg {
   param([hashtable]$spec)
-  $steps = $spec.steps
+
   $theme = Get-DiagramTheme -Focus $spec.focus
+  $stepWidth = 182
+  $gap = 26
+  $startX = 82
+  $topY = 188
+  $connectorMarkup = for ($i = 0; $i -lt ($spec.steps.Count - 1); $i++) {
+    $fromX = $startX + ($i * ($stepWidth + $gap)) + $stepWidth
+    $toX = $fromX + $gap
+    "  <path d=""M$fromX 280 H$toX"" stroke=""$($theme.edge)"" stroke-width=""8"" stroke-linecap=""round"" marker-end=""url(#flowarrow)""/>"
+  }
+
+  $stepMarkup = for ($i = 0; $i -lt $spec.steps.Count; $i++) {
+    $x = $startX + ($i * ($stepWidth + $gap))
+    $labelX = $x + 24
+    $labelY = $topY + 46
+    $titleY = $topY + 94
+@"
+  <g>
+    <rect x="$x" y="$topY" width="$stepWidth" height="184" rx="26" fill="url(#flowcard)" stroke="rgba(15,23,42,0.08)" filter="url(#flowshadow)"/>
+    <rect x="$($x + 16)" y="$($topY + 16)" width="$($stepWidth - 32)" height="150" rx="20" fill="rgba(255,255,255,0.58)" stroke="rgba(255,255,255,0.5)"/>
+    <text x="$labelX" y="$labelY" font-family="'IBM Plex Mono', monospace" font-size="20" fill="$($theme.start)" font-weight="700">STEP $($i + 1)</text>
+    <text x="$labelX" y="$titleY" font-family="'Source Sans 3', sans-serif" font-size="21" fill="#0f172a" font-weight="700">$(New-SvgTspans -Text $spec.steps[$i] -X $labelX -Y $titleY -MaxChars 13 -LineHeight 26)</text>
+  </g>
+"@
+  }
+
   return @"
 <svg xmlns="http://www.w3.org/2000/svg" width="1400" height="520" viewBox="0 0 1400 520" role="img" aria-labelledby="title desc">
-  <title>$($spec.title)</title>
-  <desc>$($spec.subtitle)</desc>
+  <title>$(Escape-SvgText $spec.title)</title>
+  <desc>$(Escape-SvgText $spec.subtitle)</desc>
   <defs>
     <linearGradient id="flowbg" x1="0%" x2="100%" y1="0%" y2="100%">
       <stop offset="0%" stop-color="$($theme.start)"/>
       <stop offset="100%" stop-color="$($theme.finish)"/>
     </linearGradient>
     <linearGradient id="flowcard" x1="0%" x2="100%" y1="0%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.98"/>
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.99"/>
       <stop offset="100%" stop-color="$($theme.panel)" stop-opacity="0.98"/>
     </linearGradient>
+    <filter id="flowshadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#0f172a" flood-opacity="0.16"/>
+    </filter>
+    <marker id="flowarrow" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="$($theme.edge)"/>
+    </marker>
   </defs>
   <rect width="1400" height="520" rx="30" fill="#f8fafc"/>
   <rect x="24" y="24" width="1352" height="472" rx="28" fill="url(#flowbg)"/>
-  <text x="76" y="86" font-family="'Merriweather', serif" font-size="38" fill="#ffffff" font-weight="700">$($spec.title)</text>
-  <text x="76" y="122" font-family="'Source Sans 3', sans-serif" font-size="22" fill="$($theme.edge)">$($spec.subtitle)</text>
-  <path d="M262 284 H336" stroke="$($theme.edge)" stroke-width="8" stroke-linecap="round"/>
-  <path d="M472 284 H546" stroke="$($theme.edge)" stroke-width="8" stroke-linecap="round"/>
-  <path d="M682 284 H756" stroke="$($theme.edge)" stroke-width="8" stroke-linecap="round"/>
-  <path d="M892 284 H966" stroke="$($theme.edge)" stroke-width="8" stroke-linecap="round"/>
-  <path d="M1102 284 H1176" stroke="$($theme.edge)" stroke-width="8" stroke-linecap="round"/>
-  <rect x="82" y="190" width="180" height="180" rx="26" fill="url(#flowcard)"/>
-  <rect x="292" y="190" width="180" height="180" rx="26" fill="url(#flowcard)"/>
-  <rect x="502" y="190" width="180" height="180" rx="26" fill="url(#flowcard)"/>
-  <rect x="712" y="190" width="180" height="180" rx="26" fill="url(#flowcard)"/>
-  <rect x="922" y="190" width="180" height="180" rx="26" fill="url(#flowcard)"/>
-  <rect x="1132" y="190" width="180" height="180" rx="26" fill="url(#flowcard)"/>
-  <text x="106" y="236" font-family="'IBM Plex Mono', monospace" font-size="22" fill="$($theme.start)" font-weight="700">STEP 1</text>
-  <text x="316" y="236" font-family="'IBM Plex Mono', monospace" font-size="22" fill="$($theme.start)" font-weight="700">STEP 2</text>
-  <text x="526" y="236" font-family="'IBM Plex Mono', monospace" font-size="22" fill="$($theme.start)" font-weight="700">STEP 3</text>
-  <text x="736" y="236" font-family="'IBM Plex Mono', monospace" font-size="22" fill="$($theme.start)" font-weight="700">STEP 4</text>
-  <text x="946" y="236" font-family="'IBM Plex Mono', monospace" font-size="22" fill="$($theme.start)" font-weight="700">STEP 5</text>
-  <text x="1156" y="236" font-family="'IBM Plex Mono', monospace" font-size="22" fill="$($theme.start)" font-weight="700">STEP 6</text>
-  <text x="106" y="288" font-family="'Source Sans 3', sans-serif" font-size="22" fill="#0f172a" font-weight="700">$($steps[0])</text>
-  <text x="316" y="288" font-family="'Source Sans 3', sans-serif" font-size="22" fill="#0f172a" font-weight="700">$($steps[1])</text>
-  <text x="526" y="288" font-family="'Source Sans 3', sans-serif" font-size="22" fill="#0f172a" font-weight="700">$($steps[2])</text>
-  <text x="736" y="288" font-family="'Source Sans 3', sans-serif" font-size="22" fill="#0f172a" font-weight="700">$($steps[3])</text>
-  <text x="946" y="288" font-family="'Source Sans 3', sans-serif" font-size="22" fill="#0f172a" font-weight="700">$($steps[4])</text>
-  <text x="1156" y="288" font-family="'Source Sans 3', sans-serif" font-size="22" fill="#0f172a" font-weight="700">$($steps[5])</text>
+  <rect x="52" y="156" width="1296" height="252" rx="30" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.16)"/>
+  <text x="76" y="86" font-family="'Merriweather', serif" font-size="38" fill="#ffffff" font-weight="700">$(Escape-SvgText $spec.title)</text>
+  <text x="76" y="122" font-family="'Source Sans 3', sans-serif" font-size="22" fill="$($theme.edge)">$(Escape-SvgText $spec.subtitle)</text>
+$($connectorMarkup -join "`n")
+$($stepMarkup -join "`n")
 </svg>
 "@
 }
-
 function Get-ArchitectureDetail {
   param([string]$Focus)
   switch ($Focus) {
@@ -761,5 +838,6 @@ Write-Utf8File -Path (Join-Path $root 'manifest.json') -Content $manifest
 foreach ($article in $articles) {
   Write-Utf8File -Path (Join-Path $articlesDir $article.file) -Content (New-ArticleHtml -article $article -allArticles $articles)
 }
+
 
 
