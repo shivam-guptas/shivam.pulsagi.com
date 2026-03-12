@@ -4,24 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shivam Gupta | Salesforce Solution Architect</title>
-  <meta name="description" content="Shivam Gupta is a Salesforce Solution Architect with 10+ years of IT experience and 9+ years of Salesforce expertise across enterprise architecture, integrations, security, CI/CD, and delivery execution." />
-  <meta name="keywords" content="Shivam Gupta, Salesforce Solution Architect, Salesforce Architect, Health Cloud, Experience Cloud, Sales Cloud, Service Cloud, Salesforce certifications, Copado, Apex, LWC" />
+  <meta name="description" content="Official website of Shivam Gupta, Salesforce Solution Architect. Explore experience, projects, certifications, Agentforce articles, and enterprise Salesforce AI guidance." />
+  <meta name="keywords" content="Shivam Gupta, Salesforce Solution Architect, Salesforce Architect, Agentforce, Salesforce AI, Health Cloud, Experience Cloud, Salesforce projects" />
   <meta name="author" content="Shivam Gupta" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://shivam.pulsagi.com/" />
   <meta property="og:title" content="Shivam Gupta | Salesforce Solution Architect" />
-  <meta property="og:description" content="Enterprise Salesforce architect focused on scalable design, integrations, governance, security, CI/CD, and delivery execution." />
+  <meta property="og:description" content="Salesforce Solution Architect with enterprise delivery experience across architecture, integrations, AI enablement, and platform engineering." />
   <meta property="og:url" content="https://shivam.pulsagi.com/" />
-  <meta property="og:type" content="profile" />
+  <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Shivam Gupta" />
   <meta property="og:image" content="https://shivam.pulsagi.com/shivam.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Shivam Gupta | Salesforce Solution Architect" />
-  <meta name="twitter:description" content="Salesforce Solution Architect with architect-level certifications and enterprise delivery experience." />
+  <meta name="twitter:description" content="Experience, projects, architecture writing, and enterprise Salesforce implementation guidance." />
   <meta name="twitter:image" content="https://shivam.pulsagi.com/shivam.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/main-site.css" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -44,564 +45,6 @@
     ]
   }
   </script>
-  <style>
-    :root {
-      --bg: #f4f5f7;
-      --panel: #ffffff;
-      --panel-soft: #fafbfc;
-      --text: #1e2430;
-      --muted: #6d7381;
-      --line: #e4e8f0;
-      --primary: #4d6da8;
-      --primary-dark: #37588f;
-      --primary-soft: #eef3ff;
-      --shadow: 0 18px 40px rgba(36, 51, 84, 0.08);
-      --radius: 18px;
-      --max: 1180px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: "Inter", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top center, rgba(77, 109, 168, 0.1), transparent 24%),
-        var(--bg);
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    .shell {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 20px 56px;
-    }
-
-    .topbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 26px 0;
-    }
-
-    .brand {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      min-height: 34px;
-      padding-left: 76px;
-      font-size: 0.95rem;
-      font-weight: 800;
-      color: var(--primary);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .brand img,
-    .site-logo {
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 65px;
-      height: 64px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 1px solid var(--line);
-      box-shadow: 0 8px 18px rgba(36, 51, 84, 0.08);
-      background: #fff;
-    }
-
-    .nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      font-size: 0.96rem;
-      color: var(--muted);
-    }
-
-    .nav a:hover,
-    .inline-link:hover,
-    .footer-nav a:hover {
-      color: var(--primary);
-    }
-
-    .hero {
-      padding: 56px 0 42px;
-      text-align: center;
-    }
-
-    .hero h1 {
-      margin: 0;
-      font-size: clamp(3.2rem, 6vw, 4.7rem);
-      line-height: 1.05;
-      font-weight: 800;
-      color: var(--primary);
-      letter-spacing: -0.04em;
-    }
-
-    .hero p {
-      margin: 18px auto 0;
-      max-width: 720px;
-      font-size: 1.12rem;
-      color: var(--text);
-    }
-
-    .hero p span {
-      color: var(--primary);
-    }
-
-    .hero-actions {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 28px;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 44px;
-      padding: 0 18px;
-      border-radius: 10px;
-      border: 1px solid var(--primary);
-      font-size: 0.95rem;
-      font-weight: 600;
-      transition: 0.2s ease;
-    }
-
-    .button.primary {
-      background: var(--primary);
-      color: #fff;
-      box-shadow: 0 8px 20px rgba(77, 109, 168, 0.22);
-    }
-
-    .button.secondary {
-      background: #fff;
-      color: var(--primary-dark);
-    }
-
-    .button:hover {
-      transform: translateY(-1px);
-    }
-
-    .section {
-      padding: 34px 0;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 26px;
-    }
-
-    .section-title h2 {
-      margin: 0;
-      font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1.1;
-      letter-spacing: -0.04em;
-    }
-
-    .section-title p {
-      margin: 10px auto 0;
-      max-width: 680px;
-      color: var(--muted);
-      font-size: 0.98rem;
-    }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .card,
-    .profile-card,
-    .metric-card,
-    .skill-group,
-    .experience-item,
-    .project-card,
-    .contact-card {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-
-    .card {
-      padding: 22px;
-      min-height: 220px;
-    }
-
-    .card h3,
-    .profile-card h3,
-    .skill-group h3,
-    .project-card h3,
-    .contact-card h3 {
-      margin: 0 0 10px;
-      font-size: 1.18rem;
-      line-height: 1.3;
-    }
-
-    .card p,
-    .profile-card p,
-    .project-card p,
-    .contact-card p,
-    .experience-meta,
-    .experience-dates {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .card-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      background: var(--primary-soft);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--primary);
-      font-weight: 800;
-      margin: 14px 0;
-    }
-
-    .card-list,
-    .project-list,
-    .skill-list {
-      list-style: none;
-      padding: 0;
-      margin: 14px 0 0;
-    }
-
-    .card-list li,
-    .project-list li,
-    .skill-list li {
-      position: relative;
-      padding-left: 16px;
-      margin-top: 8px;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .card-list li::before,
-    .project-list li::before,
-    .skill-list li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0.68em;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--primary);
-    }
-
-    .profile-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.6fr) minmax(240px, 0.75fr);
-      gap: 16px;
-      align-items: stretch;
-    }
-
-    .profile-card {
-      padding: 22px;
-    }
-
-    .profile-header {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 16px;
-    }
-
-    .profile-header img {
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid var(--primary-soft);
-    }
-
-    .profile-header strong {
-      display: block;
-      font-size: 1.18rem;
-    }
-
-    .profile-header span {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .chip-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 16px;
-    }
-
-    .chip {
-      display: inline-flex;
-      align-items: center;
-      min-height: 30px;
-      padding: 0 10px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: var(--panel-soft);
-      color: var(--text);
-      font-size: 0.84rem;
-      font-weight: 600;
-    }
-
-    .metrics-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .metric-card {
-      padding: 20px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      min-height: 146px;
-    }
-
-    .metric-card strong {
-      display: block;
-      font-size: 2rem;
-      line-height: 1;
-      color: var(--primary);
-      margin-bottom: 8px;
-    }
-
-    .metric-card span {
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-      margin-top: 16px;
-    }
-
-    .skill-group {
-      padding: 18px;
-    }
-
-    .skill-group h3 {
-      color: var(--muted);
-      font-size: 0.92rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 10px;
-    }
-
-    .experience-list {
-      display: grid;
-      gap: 14px;
-    }
-
-    .experience-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 20px 22px;
-    }
-
-    .experience-main {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      min-width: 0;
-    }
-
-    .company-badge {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: #fff;
-      border: 1px solid var(--line);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      box-shadow: 0 8px 18px rgba(36, 51, 84, 0.08);
-      flex: 0 0 auto;
-    }
-
-    .company-badge img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .experience-main h3 {
-      margin: 0;
-      font-size: 1.05rem;
-    }
-
-    .experience-meta {
-      font-size: 0.95rem;
-      margin-top: 4px;
-    }
-
-    .experience-dates {
-      white-space: nowrap;
-      font-size: 0.92rem;
-      text-align: right;
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .project-card {
-      padding: 22px;
-      min-height: 250px;
-    }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 14px 0;
-    }
-
-    .project-tags span {
-      display: inline-flex;
-      align-items: center;
-      min-height: 26px;
-      padding: 0 10px;
-      border-radius: 999px;
-      background: var(--primary-soft);
-      color: var(--primary-dark);
-      font-size: 0.8rem;
-      font-weight: 600;
-    }
-
-    .footer-strip {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 22px 0 8px;
-    }
-
-    .footer-brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 700;
-    }
-
-    .footer-brand img {
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    .footer-nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .contact-cta {
-      padding: 52px 0 16px;
-      text-align: center;
-    }
-
-    .contact-card {
-      padding: 34px 24px;
-    }
-
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px 18px;
-      margin-top: 16px;
-      color: var(--muted);
-    }
-
-    .site-end {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding-top: 20px;
-      color: var(--muted);
-      font-size: 0.88rem;
-    }
-
-    @media (max-width: 1040px) {
-      .card-grid,
-      .skills-grid,
-      .projects-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .profile-layout {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 760px) {
-      .topbar,
-      .footer-strip,
-      .site-end,
-      .experience-item {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .hero {
-        padding-top: 34px;
-      }
-
-      .card-grid,
-      .skills-grid,
-      .projects-grid,
-      .metrics-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .experience-dates {
-        text-align: left;
-        white-space: normal;
-      }
-    }
-  </style>
 </head>
 <body>
   <div class="shell">
@@ -611,54 +54,62 @@
         <span>Shivam Gupta</span>
       </a>
       <nav class="nav" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-        <a href="/agentforce-blog/">Blog</a>
+        <a href="/about.html">About</a>
+        <a href="/experience.html">Experience</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/resources.html">Resources</a>
+        <a href="/contact.html">Contact</a>
       </nav>
     </header>
 
     <main>
       <section class="hero">
         <h1>Hi, I'm Shivam</h1>
-        <p>Leading and shaping <span>Salesforce teams</span>, enterprise architecture, and delivery execution.</p>
+        <p>Leading and shaping <span>Salesforce teams</span>, enterprise architecture, AI enablement, and delivery execution.</p>
         <div class="hero-actions">
-          <a class="button primary" href="#projects">View Projects</a>
-          <a class="button secondary" href="#contact">Contact Me</a>
+          <a class="button primary" href="/projects.html">View Projects</a>
+          <a class="button secondary" href="/contact.html">Contact Me</a>
         </div>
       </section>
 
-      <section class="section" id="about">
+      <section class="section">
         <div class="section-title">
-          <h2>What I'm Up To</h2>
-          <p>Current responsibilities, focus areas, and the kind of Salesforce work I actively shape.</p>
+          <h2>What This Site Covers</h2>
+          <p>A Google-friendly multi-page site with dedicated pages for profile, experience, projects, resources, and contact information.</p>
         </div>
         <div class="card-grid">
           <article class="card">
-            <h3>Current Role</h3>
-            <p>Salesforce Solution Architect based in Salt Lake City, USA.</p>
+            <h3>About</h3>
+            <p>Background, certifications, domain expertise, and the kind of Salesforce architecture work I focus on.</p>
             <ul class="card-list">
-              <li>Leading enterprise Salesforce architecture, delivery planning, and scalable platform design for fintech and enterprise programs.</li>
-              <li>Driving adoption of AI-enabled development, automation frameworks, and modern engineering practices within Salesforce ecosystems.</li>
+              <li>System and application architecture depth</li>
+              <li>Health Cloud, Experience Cloud, Service Cloud, and Sales Cloud</li>
             </ul>
+            <div class="hero-actions" style="justify-content:flex-start;">
+              <a class="button secondary" href="/about.html">Open About</a>
+            </div>
           </article>
           <article class="card">
-            <h3>Current Projects</h3>
-            <p>Enterprise programs I’m contributing to now.</p>
+            <h3>Experience</h3>
+            <p>Professional history across Persistent, Accenture, and Infosys with role progression and delivery context.</p>
             <ul class="card-list">
-              <li>Leading architecture and delivery strategy for US-based fintech platforms, focusing on scalable Salesforce implementations and enterprise governance.</li>
-              <li>Designing AI-enabled development workflows using tools such as Codex, Claude, and modern AI agents to accelerate Salesforce engineering and solution delivery.</li>
+              <li>Architecture, development, and enterprise implementation</li>
+              <li>Fintech, healthcare, banking, and pharmaceuticals</li>
             </ul>
+            <div class="hero-actions" style="justify-content:flex-start;">
+              <a class="button secondary" href="/experience.html">Open Experience</a>
+            </div>
           </article>
           <article class="card">
-            <h3>Learning</h3>
-            <p>Areas I’m actively expanding.</p>
+            <h3>Projects and Resources</h3>
+            <p>Featured work, Agentforce articles, and AI delivery documentation for Salesforce teams.</p>
             <ul class="card-list">
-              <li>Agentforce architecture and enterprise rollout patterns</li>
-              <li>AI-assisted Salesforce delivery operating models</li>
-              <li>High-performance team structures for platform engineering</li>
+              <li>Agentforce implementation content</li>
+              <li>Codex and Claude Salesforce guide</li>
             </ul>
+            <div class="hero-actions" style="justify-content:flex-start;">
+              <a class="button secondary" href="/resources.html">Open Resources</a>
+            </div>
           </article>
         </div>
       </section>
@@ -674,283 +125,41 @@
                 <span style="display:block;">Salt Lake City, USA</span>
               </div>
             </div>
-            <p>
-              I’m a Salesforce architect focused on building systems that are practical to deliver and maintain. My experience spans Experience Cloud, Sales Cloud, Service Cloud, Health Cloud, integrations, identity, CI/CD, security design, Apex engineering, and implementation leadership.
-            </p>
-            <p style="margin-top: 12px;">
-              I usually work where requirements need architectural structure, delivery plans need realism, and teams need patterns that reduce rework across development, testing, deployment, and support.
-            </p>
+            <p>I help Salesforce teams move from requirement ambiguity to architecture clarity. My work spans Apex, Lightning, integrations, security, identity, release governance, AI-assisted delivery, and enterprise implementation planning.</p>
             <div class="chip-row">
               <span class="chip">Experience Cloud</span>
               <span class="chip">Service Cloud</span>
               <span class="chip">Sales Cloud</span>
               <span class="chip">Health Cloud</span>
+              <span class="chip">Agentforce</span>
               <span class="chip">Integration Architecture</span>
-              <span class="chip">CI/CD</span>
-              <span class="chip">Agentforce</span>
-              <span class="chip">Codex</span>
-              <span class="chip">Claude.ai</span>
             </div>
           </article>
-
           <div class="metrics-grid">
-            <article class="metric-card">
-              <strong>10+</strong>
-              <span>Years Experience</span>
-            </article>
-            <article class="metric-card">
-              <strong>9+</strong>
-              <span>Years in Salesforce</span>
-            </article>
-            <article class="metric-card">
-              <strong>13</strong>
-              <span>Salesforce Credentials</span>
-            </article>
-            <article class="metric-card">
-              <strong>4</strong>
-              <span>Core Industries Served</span>
-            </article>
+            <article class="metric-card"><strong>10+</strong><span>Years Experience</span></article>
+            <article class="metric-card"><strong>9+</strong><span>Years in Salesforce</span></article>
+            <article class="metric-card"><strong>13</strong><span>Salesforce Credentials</span></article>
+            <article class="metric-card"><strong>2</strong><span>Major content hubs</span></article>
           </div>
         </div>
-
-        <div class="skills-grid">
-          <article class="skill-group">
-            <h3>Languages</h3>
-            <div class="chip-row">
-              <span class="chip">Apex</span>
-              <span class="chip">JavaScript</span>
-              <span class="chip">SOQL</span>
-              <span class="chip">SOSL</span>
-              <span class="chip">HTML</span>
-              <span class="chip">CSS</span>
-            </div>
-          </article>
-          <article class="skill-group">
-            <h3>Frameworks</h3>
-            <div class="chip-row">
-              <span class="chip">LWC</span>
-              <span class="chip">Aura</span>
-              <span class="chip">Flows</span>
-              <span class="chip">Platform Events</span>
-              <span class="chip">REST APIs</span>
-              <span class="chip">Experience Builder</span>
-              <span class="chip">Agentforce</span>
-            </div>
-          </article>
-          <article class="skill-group">
-            <h3>Clouds</h3>
-            <div class="chip-row">
-              <span class="chip">Experience Cloud</span>
-              <span class="chip">Sales Cloud</span>
-              <span class="chip">Service Cloud</span>
-              <span class="chip">Health Cloud</span>
-            </div>
-          </article>
-          <article class="skill-group">
-            <h3>Tooling</h3>
-            <div class="chip-row">
-              <span class="chip">Copado</span>
-              <span class="chip">Git</span>
-              <span class="chip">Salesforce CLI</span>
-              <span class="chip">Data Loader</span>
-              <span class="chip">VS Code</span>
-            </div>
-          </article>
-          <article class="skill-group">
-            <h3>Practices</h3>
-            <div class="chip-row">
-              <span class="chip">Architecture Review</span>
-              <span class="chip">Release Governance</span>
-              <span class="chip">Security Design</span>
-              <span class="chip">Test Strategy</span>
-            </div>
-          </article>
-          <article class="skill-group">
-            <h3>Domains</h3>
-            <div class="chip-row">
-              <span class="chip">Fintech</span>
-              <span class="chip">Banking</span>
-              <span class="chip">Healthcare</span>
-              <span class="chip">Pharmaceuticals</span>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="experience">
-        <div class="section-title">
-          <h2>Professional Experience</h2>
-        </div>
-        <div class="experience-list">
-          <article class="experience-item">
-            <div class="experience-main">
-              <span class="company-badge">
-                <img src="./persistent.png" alt="Persistent logo" />
-              </span>
-              <div>
-                <h3>Persistent Systems Inc</h3>
-                <div class="experience-meta">Project Lead / Salesforce Solution Architect</div>
-              </div>
-            </div>
-            <div class="experience-dates">May 2021 - Present · Salt Lake City / USA</div>
-          </article>
-          <article class="experience-item">
-            <div class="experience-main">
-              <span class="company-badge">
-                <img src="./Accenture.png" alt="Accenture logo" />
-              </span>
-              <div>
-                <h3>Accenture</h3>
-                <div class="experience-meta">Sr. Salesforce Developer</div>
-              </div>
-            </div>
-            <div class="experience-dates">Sep 2019 - May 2021 · Hyderabad / India</div>
-          </article>
-          <article class="experience-item">
-            <div class="experience-main">
-              <span class="company-badge">
-                <img src="./infosys.jpg" alt="Infosys logo" />
-              </span>
-              <div>
-                <h3>Infosys</h3>
-                <div class="experience-meta">System Engineer /Technology Analyst</div>
-              </div>
-            </div>
-            <div class="experience-dates">Dec 2015 - Sep 2019 · India</div>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="projects">
-        <div class="section-title">
-          <h2>Featured Projects</h2>
-          <p>A collection of work that reflects architecture thinking, technical depth, and implementation focus.</p>
-        </div>
-        <div class="projects-grid">
-          <article class="project-card">
-            <h3>Fintech Salesforce Architecture</h3>
-            <p>Architecture and delivery execution support for a Salesforce program with complex solution planning needs.</p>
-            <div class="project-tags">
-              <span>Architecture</span>
-              <span>Delivery</span>
-              <span>Salesforce</span>
-            </div>
-            <ul class="project-list">
-              <li>Lending platform workflows</li>
-              <li>Requirement-to-design alignment</li>
-              <li>Secure integrations with financial systems</li>
-              <li>Scalable enterprise architecture</li>
-            </ul>
-          </article>
-          <article class="project-card">
-            <h3>Salesforce Platform Automation Framework</h3>
-            <p>Reusable frameworks and automation patterns for building scalable Salesforce solutions.</p>
-            <div class="project-tags">
-              <span>Sales cloud</span>
-              <span>force.com</span>
-              <span>LWC/Aura</span>
-              <span>Apex</span>
-            </div>
-            <ul class="project-list">
-              <li>Apex service architecture</li>
-              <li>LWC reusable components</li>
-              <li>Deployment and release structure</li>
-            </ul>
-          </article>
-          <article class="project-card">
-            <h3>Service Cloud Case Automation</h3>
-            <p>Case-centric delivery work spanning assignment logic, Email-to-Case, web-to-case, and repeatable release cycles.</p>
-            <div class="project-tags">
-              <span>Service Cloud</span>
-              <span>Case Management</span>
-              <span>Automation</span>
-            </div>
-            <ul class="project-list">
-              <li>Worked across more than eight releases</li>
-              <li>Reusable Apex services and test coverage</li>
-              <li>Maintainable support-oriented solution design</li>
-            </ul>
-          </article>
-          <article class="project-card">
-            <h3>Salesforce Agentforce Architecture</h3>
-            <p>Designing architecture patterns and implementation frameworks for Salesforce Agentforce adoption in enterprise environments.</p>
-            <div class="project-tags">
-              <span>Agentforce</span>
-              <span>Architecture</span>
-              <span>SEO</span>
-            </div>
-            <ul class="project-list">
-              <li>AI-assisted development workflows</li>
-              <li>Architecture guidelines for Salesforce teams</li>
-              <li>Implementation playbooks</li>
-            </ul>
-          </article>
-          <article class="project-card">
-            <h3>AI-Driven Salesforce Development</h3>
-            <p>Using tools like Codex, Claude, and AI agents to accelerate Salesforce development and architecture design.</p>
-            <div class="project-tags">
-              <span>AI</span>
-              <span>Salesforce</span>
-              <span>Documentation</span>
-            </div>
-            <ul class="project-list">
-              <li>AI prompt frameworks</li>
-              <li>Governance, security, and operating model</li>
-              <li>Development automation</li>
-            </ul>
-          </article>
-          <article class="project-card">
-            <h3>Salesforce Writing and Resources</h3>
-            <p>Knowledge assets built for real project teams: blogs, playbooks, implementation guides, and technical articles.</p>
-            <div class="project-tags">
-              <span>Knowledge</span>
-              <span>Playbooks</span>
-              <span>Guides</span>
-            </div>
-            <ul class="project-list">
-              <li>Production-ready web documentation</li>
-              <li>Architecture-first content strategy</li>
-              <li>Resource hub for delivery teams</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <div class="footer-strip">
-        <div class="footer-brand">
-          <img src="./shivam.jpg" alt="Shivam Gupta" />
-          <span>Shivam Gupta</span>
-        </div>
-        <nav class="footer-nav" aria-label="Footer">
-          <a href="/">Home</a>
-          <a href="#about">About</a>
-          <a href="#experience">Experience</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-          <a href="/agentforce-blog/">Blog</a>
-          <a href="/codex-claude-salesforce-guide/">Tools</a>
-        </nav>
-      </div>
-
-      <section class="contact-cta" id="contact">
-        <div class="section-title">
-          <h2>Let's Work Together</h2>
-          <p>I'm always interested in hearing about new Salesforce programs, architecture problems, and implementation ideas.</p>
-        </div>
-        <article class="contact-card">
-          <h3>Contact Me</h3>
-          <p>Reach out if you need help with architecture direction, enterprise delivery, integrations, Agentforce, or Salesforce platform strategy.</p>
-          <div class="contact-links">
-            <a class="inline-link" href="mailto:er.shivam.guptas@gmail.com">er.shivam.guptas@gmail.com</a>
-            <a class="inline-link" href="https://www.linkedin.com/in/shivam-guptas" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a class="inline-link" href="https://pulsagi.com" target="_blank" rel="noreferrer">pulsagi.com</a>
-          </div>
-          <div class="hero-actions" style="margin-top: 20px;">
-            <a class="button primary" href="mailto:er.shivam.guptas@gmail.com">Contact Me</a>
-          </div>
-        </article>
       </section>
     </main>
+
+    <div class="footer-strip">
+      <div class="footer-brand">
+        <img src="./shivam.jpg" alt="Shivam Gupta" />
+        <span>Shivam Gupta</span>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="/about.html">About</a>
+        <a href="/experience.html">Experience</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/resources.html">Resources</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/agentforce-blog/">Agentforce Blog</a>
+        <a href="/codex-claude-salesforce-guide/">AI Guide</a>
+      </nav>
+    </div>
 
     <footer class="site-end">
       <span>© 2026 Shivam Gupta</span>
