@@ -103,9 +103,12 @@
     }
 
     .brand {
+      position: relative;
       display: inline-flex;
       align-items: center;
       gap: 10px;
+      min-height: 34px;
+      padding-left: 76px;
       font-size: 0.95rem;
       font-weight: 800;
       color: var(--primary);
@@ -115,8 +118,12 @@
 
     .brand img,
     .site-logo {
-      width: 34px;
-      height: 34px;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 65px;
+      height: 64px;
       border-radius: 50%;
       object-fit: cover;
       border: 1px solid var(--line);
