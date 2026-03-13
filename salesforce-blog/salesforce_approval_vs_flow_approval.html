@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -254,13 +254,17 @@
       h1 { font-size: 1.8rem; }
     }
   </style>
-</head>
-<body>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NFJXRZSV');</script>
+<!-- End Google Tag Manager --></head>
+<body><!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFJXRZSV" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="./index.html">
         <span class="brand-mark">Salesforce Blog</span>
-        <span class="brand-sub">Shivam Gupta – Salesforce Architect</span>
+        <span class="brand-sub">Shivam Gupta â€“ Salesforce Architect</span>
       </a>
       <nav class="nav-links" aria-label="Primary">
         <a href="./index.html">Home</a>
@@ -280,8 +284,8 @@
           Salesforce now offers two very different ways to handle approvals. The classic <strong>Approval Process</strong>
           is still the fastest option for simple, record-centric approvals. The newer <strong>Flow Approval Process</strong>
           model brings approvals into a Flow-first design, with stages, steps, screen flows, and orchestration-style control.
-          For architects and developers, the key decision is no longer just “can this approve a record?” but “which option gives the
-          right balance of flexibility, auditability, admin maintainability, and enterprise scale?”
+          For architects and developers, the key decision is no longer just â€œcan this approve a record?â€ but â€œwhich option gives the
+          right balance of flexibility, auditability, admin maintainability, and enterprise scale?â€
         </p>
         <div class="reading-meta">
           <span>Published March 12, 2026</span>
@@ -318,7 +322,7 @@
       <h2 id="what-is-classic">1) What is the classic Salesforce Approval Process?</h2>
       <div class="card">
         <p>
-          Classic Approval Process is Salesforce’s long-standing, declarative approval engine for records. It provides
+          Classic Approval Process is Salesforceâ€™s long-standing, declarative approval engine for records. It provides
           built-in submit, approve, reject, recall, approval history, and related reporting constructs. It is best when
           the process is predictable, mostly linear, and tightly tied to a single record. Salesforce still documents this
           model as the legacy or classic approach alongside the newer Flow-based approval model.
@@ -328,7 +332,7 @@
             <h3>Where it works well</h3>
             <ul>
               <li>Manager approval on a discount, contract, or quote.</li>
-              <li>Simple two-step approval such as Manager → Finance.</li>
+              <li>Simple two-step approval such as Manager â†’ Finance.</li>
               <li>Cases where audit visibility matters more than advanced branching.</li>
               <li>Teams that want minimal custom development.</li>
             </ul>
@@ -348,7 +352,7 @@
       <h2 id="what-is-flow">2) What is the Flow Approval Process?</h2>
       <div class="card">
         <p>
-          Salesforce’s Flow Approval Process is a Flow-first approval model built around a sequence of <strong>stages</strong>
+          Salesforceâ€™s Flow Approval Process is a Flow-first approval model built around a sequence of <strong>stages</strong>
           and <strong>steps</strong>. Steps can run sequentially, concurrently, or based on defined requirements, and each approval
           step is associated with an active screen flow. This design makes Flow approvals much more adaptable than the classic
           approval engine, especially when approvals are only one part of a larger business workflow.
@@ -567,7 +571,7 @@ Current_Approval_Stage__c</div>
       <div class="card">
         <h3>Field History Tracking and Salesforce Shield</h3>
         <p>
-          Standard Field History Tracking still has practical limits and retention constraints, while Salesforce Shield’s
+          Standard Field History Tracking still has practical limits and retention constraints, while Salesforce Shieldâ€™s
           Field Audit Trail extends long-term history retention and higher field-tracking scale. If your organization is in
           banking, lending, insurance, or healthcare, Shield can be a major part of a Flow approval compliance design.
         </p>
@@ -583,11 +587,11 @@ Current_Approval_Stage__c</div>
         <div class="card">
           <h3>Pattern A: classic linear approval</h3>
           <div class="codeblock">Record Submitted
-  ↓
+  â†“
 Manager Approval
-  ↓
+  â†“
 Finance Approval
-  ↓
+  â†“
 Approved / Rejected</div>
           <p>Best when the process is simple, sequential, and strongly record-centric.</p>
         </div>
@@ -595,15 +599,15 @@ Approved / Rejected</div>
         <div class="card">
           <h3>Pattern B: Flow approval with audit design</h3>
           <div class="codeblock">Record Triggered Entry
-  ↓
+  â†“
 Determine Approver Logic
-  ↓
+  â†“
 Approval Stage / Step
-  ↓
+  â†“
 Update Status Fields
-  ↓
+  â†“
 Insert Approval_History__c
-  ↓
+  â†“
 Notify + Continue Workflow</div>
           <p>Best when approval is part of a wider automation path and reporting must be customized.</p>
         </div>
@@ -611,15 +615,15 @@ Notify + Continue Workflow</div>
         <div class="card">
           <h3>Pattern C: orchestration-style enterprise workflow</h3>
           <div class="codeblock">Application Submitted
-  ↓
+  â†“
 Document Verification
-  ↓
+  â†“
 Risk Review
-  ↓
+  â†“
 Compliance Review
-  ↓
+  â†“
 Manager Approval
-  ↓
+  â†“
 Disbursement / Fulfillment</div>
           <p>Best for multi-stage enterprise processes where approvals are only one step in the end-to-end journey.</p>
         </div>
@@ -691,9 +695,9 @@ Disbursement / Fulfillment</div>
       <div class="footer-card small">
         <h3>Reference basis for this article</h3>
         <p>
-          This article aligns with Salesforce’s official Flow Approval documentation describing approvals as stage-and-step based flows,
+          This article aligns with Salesforceâ€™s official Flow Approval documentation describing approvals as stage-and-step based flows,
           with screen-flow-backed approval steps and Flow Builder resources. It also reflects Salesforce documentation on classic approval
-          history reporting and official guidance on Field History Tracking and Field Audit Trail, plus community coverage of the Spring ’25
+          history reporting and official guidance on Field History Tracking and Field Audit Trail, plus community coverage of the Spring â€™25
           and later Flow approval enhancements.
         </p>
         <p>
@@ -719,3 +723,4 @@ Disbursement / Fulfillment</div>
   </footer>
 </body>
 </html>
+
