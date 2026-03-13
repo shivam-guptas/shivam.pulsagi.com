@@ -28,7 +28,15 @@
                  ]
 }</script><!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NFJXRZSV');</script>
-<!-- End Google Tag Manager --></head>
+<!-- End Google Tag Manager --><!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S55MNPYJF8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-S55MNPYJF8');
+</script></head>
 <body><!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFJXRZSV" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) --><header class="site-header"><div class="header-inner"><a class="brand" href="../index.html"><span class="brand-mark">Salesforce Agentforce Blog</span><span class="brand-sub">Shivam Gupta  -  Salesforce Architect</span></a><nav class="nav-links" aria-label="Primary"><a href="../index.html">Home</a><a href="../index.html#articles">Articles</a><a href="../../codex-claude-salesforce-guide/index.html">AI Guide</a><a href="https://pulsagi.com" rel="noopener" target="_blank">Pulsagi</a></nav></div></header>
@@ -74,4 +82,5 @@
 <section id="best-practices"><h2>Best practices</h2><ul><li>Use named credentials instead of hard-coded endpoints or secrets.</li><li>Normalize downstream errors into categories the agent can handle.</li><li>Make action prompts clear about what the external system can and cannot do.</li><li>Protect against duplicate submissions with idempotency patterns.</li><li>Measure latency because model orchestration magnifies slow integrations.</li></ul></section>
 <section id="conclusion"><h2>Conclusion</h2><p>External APIs expand what Agentforce can do, but they also expose the agent to the realities of distributed systems. Use clear contracts, secure credentials, defensive retries, and observability from day one. When integration design is disciplined, the agent can coordinate work beyond Salesforce without losing trust.</p><p>For Salesforce teams, the practical lesson is consistent: start from business flow, ground the model on trusted enterprise context, expose only the actions you can govern, and measure what the agent actually changes in production. That is how Agentforce becomes a durable platform capability instead of a short-lived proof of concept.</p></section><section class="related-section"><h2>Related articles</h2><div class="related-grid"><a class="related-card" href="./agentforce-architecture.html"><div class="article-kicker">Architecture</div><h3>What is Salesforce Agentforce - Complete Architecture Guide</h3><p>A complete technical guide to Agentforce architecture, runtime components, enterprise grounding, and delivery patterns.</p></a><a class="related-card" href="./build-first-agent.html"><div class="article-kicker">Implementation</div><h3>How to Build Your First AI Agent in Salesforce Agentforce</h3><p>Step-by-step guidance for creating, grounding, testing, and deploying a first Agentforce implementation.</p></a><a class="related-card" href="./prompt-builder.html"><div class="article-kicker">Prompting</div><h3>Agentforce Prompt Builder Deep Dive</h3><p>An implementation-level exploration of Prompt Builder templates, context layering, evaluation, and operational discipline.</p></a></div></section></article></div></main>
 <footer class="site-footer"><div class="footer-inner"><span>(c) 2026 Shivam Gupta. Salesforce Agentforce technical articles.</span><span><a href="../index.html">Browse all articles</a></span></div></footer></body></html>
+
 
