@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://shivam.pulsagi.com/</loc>
@@ -37,88 +37,82 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://shivam.pulsagi.com/agentforce-blog/</loc>
-    <lastmod>2026-03-11</lastmod>
+    <loc>https://shivam.pulsagi.com/AI-blog/</loc>
+    <lastmod>2026-03-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://shivam.pulsagi.com/agentforce-blog/articles/agentforce-architecture.html</loc>
+    <loc>https://shivam.pulsagi.com/AI-blog/agentforce-architecture.html</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://shivam.pulsagi.com/agentforce-blog/articles/build-first-agent.html</loc>
+    <loc>https://shivam.pulsagi.com/AI-blog/build-first-agent.html</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://shivam.pulsagi.com/agentforce-blog/articles/prompt-builder.html</loc>
+    <loc>https://shivam.pulsagi.com/AI-blog/prompt-builder.html</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://shivam.pulsagi.com/agentforce-blog/articles/agent-actions-apex.html</loc>
+    <loc>https://shivam.pulsagi.com/AI-blog/agent-actions-apex.html</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://shivam.pulsagi.com/agentforce-blog/articles/external-api.html</loc>
+    <loc>https://shivam.pulsagi.com/AI-blog/external-api.html</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://shivam.pulsagi.com/agentforce-blog/articles/support-agent.html</loc>
+    <loc>https://shivam.pulsagi.com/AI-blog/support-agent.html</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://shivam.pulsagi.com/agentforce-blog/articles/security-governance.html</loc>
+    <loc>https://shivam.pulsagi.com/AI-blog/security-governance.html</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://shivam.pulsagi.com/agentforce-blog/articles/data-cloud-agent.html</loc>
+    <loc>https://shivam.pulsagi.com/AI-blog/data-cloud-agent.html</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://shivam.pulsagi.com/agentforce-blog/articles/advanced-reasoning.html</loc>
+    <loc>https://shivam.pulsagi.com/AI-blog/advanced-reasoning.html</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://shivam.pulsagi.com/agentforce-blog/articles/production-deployment.html</loc>
+    <loc>https://shivam.pulsagi.com/AI-blog/production-deployment.html</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://shivam.pulsagi.com/agentforce-blog/articles/salesforce_ai_tools_comparison.html</loc>
+    <loc>https://shivam.pulsagi.com/AI-blog/salesforce_ai_tools_comparison.html</loc>
     <lastmod>2026-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://shivam.pulsagi.com/salesforce-blog/</loc>
-    <lastmod>2026-03-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://shivam.pulsagi.com/salesforce-blog/salesforce_approval_vs_flow_approval.html</loc>
-    <lastmod>2026-03-12</lastmod>
+    <loc>https://shivam.pulsagi.com/AI-blog/ai-claw-article.html</loc>
+    <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.88</priority>
   </url>
   <url>
     <loc>https://shivam.pulsagi.com/codex-claude-salesforce-guide/</loc>
@@ -163,3 +157,6 @@
     <priority>0.88</priority>
   </url>
 </urlset>
+
+
+

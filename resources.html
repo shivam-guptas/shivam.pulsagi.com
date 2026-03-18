@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <title>Resources | Shivam Gupta</title>
-  <meta name="description" content="Salesforce resources by Shivam Gupta including the Salesforce blog, Agentforce blog, and the Codex and Claude enterprise guide." />
+  <meta name="description" content="Salesforce and AI resources by Shivam Gupta including the Salesforce blog, AI blog, and the Codex and Claude enterprise guide." />
   <meta name="author" content="Shivam Gupta" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://shivam.pulsagi.com/resources.html" />
@@ -23,13 +23,131 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./assets/main-site.css" />
+  <style>
+    .resource-library {
+      margin-top: 32px;
+      display: grid;
+      gap: 20px;
+    }
+
+    .resource-search-card {
+      padding: 24px;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 14px 34px rgba(15, 23, 42, 0.06);
+    }
+
+    .resource-search-label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: 700;
+      color: #1f2937;
+    }
+
+    .resource-search-input {
+      width: 100%;
+      min-height: 52px;
+      padding: 0 16px;
+      border: 1px solid rgba(15, 23, 42, 0.12);
+      border-radius: 16px;
+      background: #fff;
+      font: inherit;
+      color: #1f2937;
+    }
+
+    .resource-search-input:focus {
+      outline: 2px solid rgba(11, 92, 171, 0.18);
+      border-color: rgba(11, 92, 171, 0.32);
+    }
+
+    .resource-results-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .resource-results-count {
+      color: #5f6b7a;
+      font-size: 0.96rem;
+    }
+
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+
+    .resource-link-card {
+      display: block;
+      padding: 22px;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.05);
+      color: inherit;
+      transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+    }
+
+    .resource-link-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(11, 92, 171, 0.18);
+      box-shadow: 0 18px 38px rgba(15, 23, 42, 0.08);
+    }
+
+    .resource-link-card h3 {
+      margin: 10px 0 8px;
+      color: #111827;
+      font-size: 1.1rem;
+    }
+
+    .resource-link-card p {
+      margin: 0;
+      color: #5f6b7a;
+    }
+
+    .resource-type {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 0 10px;
+      border-radius: 999px;
+      background: rgba(11, 92, 171, 0.08);
+      color: #083d77;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .resource-meta {
+      margin: 0 0 10px;
+      color: #856200;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .resource-empty {
+      display: none;
+      padding: 20px 22px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.92);
+      color: #5f6b7a;
+    }
+
+    .resource-empty.is-visible {
+      display: block;
+    }
+  </style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "Resources | Shivam Gupta",
     "url": "https://shivam.pulsagi.com/resources.html",
-    "description": "Salesforce resources by Shivam Gupta including the Salesforce blog, Agentforce blog, and the Codex and Claude enterprise guide."
+    "description": "Salesforce and AI resources by Shivam Gupta including the Salesforce blog, AI blog, and the Codex and Claude enterprise guide."
   }
   </script>
 <!-- Google Tag Manager -->
@@ -60,7 +178,7 @@
     <main>
       <section class="hero">
         <h1>Resources</h1>
-        <p>Technical content and implementation documentation built for Salesforce teams working across architecture, Agentforce, AI, and delivery operations.</p>
+        <p>Technical content and implementation documentation built for teams working across Salesforce architecture, Agentforce, AI, and delivery operations.</p>
       </section>
       <section class="section">
         <div class="two-column">
@@ -81,29 +199,30 @@
             </ul>
           </article>
           <article class="page-card">
-            <h3>Salesforce Agentforce Blog</h3>
-            <p>Eleven detailed articles covering Agentforce architecture, prompt design, actions, APIs, security, Data Cloud, reasoning, production deployment, and AI tooling strategy.</p>
+            <h3>AI Blog</h3>
+            <p>Twelve detailed articles covering AI trends, Agentforce architecture, prompt design, actions, APIs, security, Data Cloud, reasoning, production deployment, and AI tooling strategy.</p>
             <ul class="detail-list">
               <li>Technical article series with code examples</li>
               <li>Architecture diagrams and implementation steps</li>
               <li>Designed for architects, admins, and developers</li>
             </ul>
             <div class="hero-actions" style="justify-content:flex-start;">
-              <a class="button primary" href="/agentforce-blog/">Open Agentforce Blog</a>
+              <a class="button primary" href="/AI-blog/">Open AI Blog</a>
             </div>
             <h3 style="margin-top:20px;">Direct article links</h3>
             <ul class="detail-list">
-              <li><a class="inline-link" href="/agentforce-blog/articles/agentforce-architecture.html">What is Salesforce Agentforce - Complete Architecture Guide</a></li>
-              <li><a class="inline-link" href="/agentforce-blog/articles/build-first-agent.html">How to Build Your First AI Agent in Salesforce Agentforce</a></li>
-              <li><a class="inline-link" href="/agentforce-blog/articles/prompt-builder.html">Agentforce Prompt Builder Deep Dive</a></li>
-              <li><a class="inline-link" href="/agentforce-blog/articles/agent-actions-apex.html">Creating Custom Agent Actions with Apex</a></li>
-              <li><a class="inline-link" href="/agentforce-blog/articles/external-api.html">Integrating Agentforce with External APIs</a></li>
-              <li><a class="inline-link" href="/agentforce-blog/articles/support-agent.html">Building Autonomous Customer Support Agents</a></li>
-              <li><a class="inline-link" href="/agentforce-blog/articles/security-governance.html">Agentforce Security, Governance and Trust Layer</a></li>
-              <li><a class="inline-link" href="/agentforce-blog/articles/data-cloud-agent.html">Using Agentforce with Data Cloud</a></li>
-              <li><a class="inline-link" href="/agentforce-blog/articles/advanced-reasoning.html">Advanced Multi-Step AI Agent Reasoning</a></li>
-              <li><a class="inline-link" href="/agentforce-blog/articles/production-deployment.html">Deploying Agentforce to Production</a></li>
-              <li><a class="inline-link" href="/agentforce-blog/articles/salesforce_ai_tools_comparison.html">AI Tools for Salesforce Development - Claude, Codex, Agentforce, Gemini</a></li>
+              <li><a class="inline-link" href="/AI-blog/agentforce-architecture.html">What is Salesforce Agentforce - Complete Architecture Guide</a></li>
+              <li><a class="inline-link" href="/AI-blog/build-first-agent.html">How to Build Your First AI Agent in Salesforce Agentforce</a></li>
+              <li><a class="inline-link" href="/AI-blog/prompt-builder.html">Agentforce Prompt Builder Deep Dive</a></li>
+              <li><a class="inline-link" href="/AI-blog/agent-actions-apex.html">Creating Custom Agent Actions with Apex</a></li>
+              <li><a class="inline-link" href="/AI-blog/external-api.html">Integrating Agentforce with External APIs</a></li>
+              <li><a class="inline-link" href="/AI-blog/support-agent.html">Building Autonomous Customer Support Agents</a></li>
+              <li><a class="inline-link" href="/AI-blog/security-governance.html">Agentforce Security, Governance and Trust Layer</a></li>
+              <li><a class="inline-link" href="/AI-blog/data-cloud-agent.html">Using Agentforce with Data Cloud</a></li>
+              <li><a class="inline-link" href="/AI-blog/advanced-reasoning.html">Advanced Multi-Step AI Agent Reasoning</a></li>
+              <li><a class="inline-link" href="/AI-blog/production-deployment.html">Deploying Agentforce to Production</a></li>
+              <li><a class="inline-link" href="/AI-blog/salesforce_ai_tools_comparison.html">AI Tools for Salesforce Development - Claude, Codex, Agentforce, Gemini</a></li>
+              <li><a class="inline-link" href="/AI-blog/ai-claw-article.html">OneClaw, OpenClaw, and the New AI Claw Wave</a></li>
             </ul>
           </article>
           <article class="page-card">
@@ -129,13 +248,196 @@
           </article>
         </div>
       </section>
+      <section class="section">
+        <div class="resource-library">
+          <div class="resource-search-card">
+            <div class="resource-results-head">
+              <div>
+                <h2 style="margin:0 0 8px;">Search All Articles</h2>
+                <p style="margin:0;color:#5f6b7a;">Search across every Salesforce article, AI article, and multi-page guide entry directly from the Resources tab.</p>
+              </div>
+              <div class="resource-results-count" id="resourceCount">19 resources</div>
+            </div>
+            <label class="resource-search-label" for="resourceSearch">Find by title, topic, category, or keyword</label>
+            <input class="resource-search-input" id="resourceSearch" type="search" placeholder="Try: approvals, Agentforce, prompt, governance, Claude, Codex" />
+          </div>
+
+          <div class="resource-grid" id="resourceGrid">
+            <a class="resource-link-card" data-resource-item data-search="salesforce approval process flow approval architecture audit trail field history salesforce blog approvals governance" href="/salesforce-blog/salesforce_approval_vs_flow_approval.html">
+              <span class="resource-type">Salesforce Article</span>
+              <h3>Salesforce Approval Process vs Flow Approval</h3>
+              <div class="resource-meta">Approvals | Audit Trail | Salesforce Platform</div>
+              <p>Architecture, auditability, field history tracking, and enterprise-fit guidance for Salesforce approvals.</p>
+            </a>
+
+            <a class="resource-link-card" data-resource-item data-search="agentforce architecture ai blog runtime components grounding delivery patterns salesforce ai architecture" href="/AI-blog/agentforce-architecture.html">
+              <span class="resource-type">AI Article</span>
+              <h3>What is Salesforce Agentforce - Complete Architecture Guide</h3>
+              <div class="resource-meta">Architecture | Agentforce</div>
+              <p>Runtime components, grounding layers, enterprise design, and delivery patterns for Agentforce.</p>
+            </a>
+
+            <a class="resource-link-card" data-resource-item data-search="build first ai agent salesforce agentforce implementation grounding testing deployment" href="/AI-blog/build-first-agent.html">
+              <span class="resource-type">AI Article</span>
+              <h3>How to Build Your First AI Agent in Salesforce Agentforce</h3>
+              <div class="resource-meta">Implementation | Agentforce</div>
+              <p>Step-by-step setup guidance for creating, grounding, testing, and deploying an Agentforce implementation.</p>
+            </a>
+
+            <a class="resource-link-card" data-resource-item data-search="prompt builder deep dive templates context evaluation operations agentforce prompting" href="/AI-blog/prompt-builder.html">
+              <span class="resource-type">AI Article</span>
+              <h3>Agentforce Prompt Builder Deep Dive</h3>
+              <div class="resource-meta">Prompting | Agentforce</div>
+              <p>Template design, context layering, evaluation, and operational discipline for Prompt Builder.</p>
+            </a>
+
+            <a class="resource-link-card" data-resource-item data-search="custom agent actions apex invocable secure testable orchestration" href="/AI-blog/agent-actions-apex.html">
+              <span class="resource-type">AI Article</span>
+              <h3>Creating Custom Agent Actions with Apex</h3>
+              <div class="resource-meta">Apex | Agentforce</div>
+              <p>Secure, testable Apex action patterns for Agentforce orchestration and governed execution.</p>
+            </a>
+
+            <a class="resource-link-card" data-resource-item data-search="external api integrations named credentials middleware flow agentforce" href="/AI-blog/external-api.html">
+              <span class="resource-type">AI Article</span>
+              <h3>Integrating Agentforce with External APIs</h3>
+              <div class="resource-meta">Integrations | Agentforce</div>
+              <p>Patterns for connecting Agentforce with external systems, APIs, and controlled automation flows.</p>
+            </a>
+
+            <a class="resource-link-card" data-resource-item data-search="support agent customer service autonomous knowledge escalation cases" href="/AI-blog/support-agent.html">
+              <span class="resource-type">AI Article</span>
+              <h3>Building Autonomous Customer Support Agents</h3>
+              <div class="resource-meta">Service | Agentforce</div>
+              <p>How to design support agents that ground on knowledge, resolve safely, and escalate with context.</p>
+            </a>
+
+            <a class="resource-link-card" data-resource-item data-search="security governance trust layer policy auditability data minimization agentforce" href="/AI-blog/security-governance.html">
+              <span class="resource-type">AI Article</span>
+              <h3>Agentforce Security, Governance and Trust Layer</h3>
+              <div class="resource-meta">Security | Governance</div>
+              <p>Policy enforcement, auditability, data minimization, and operational governance for Agentforce.</p>
+            </a>
+
+            <a class="resource-link-card" data-resource-item data-search="data cloud grounding unified profiles segmentation real time agentforce" href="/AI-blog/data-cloud-agent.html">
+              <span class="resource-type">AI Article</span>
+              <h3>Using Agentforce with Data Cloud</h3>
+              <div class="resource-meta">Data Cloud | Agentforce</div>
+              <p>Grounding Agentforce with unified profiles, calculated insights, and real-time segmentation.</p>
+            </a>
+
+            <a class="resource-link-card" data-resource-item data-search="advanced reasoning multi step ai agent reliable workflows decomposition validation" href="/AI-blog/advanced-reasoning.html">
+              <span class="resource-type">AI Article</span>
+              <h3>Advanced Multi-Step AI Agent Reasoning</h3>
+              <div class="resource-meta">Reasoning | AI Agents</div>
+              <p>Reliable multi-step planning, validation, and orchestration for complex AI agent workflows.</p>
+            </a>
+
+            <a class="resource-link-card" data-resource-item data-search="production deployment testing monitoring rollback operational ownership agentforce devops" href="/AI-blog/production-deployment.html">
+              <span class="resource-type">AI Article</span>
+              <h3>Deploying Agentforce to Production</h3>
+              <div class="resource-meta">DevOps | Production</div>
+              <p>Promotion strategy, testing, monitoring, rollback, and operational readiness for live deployment.</p>
+            </a>
+
+            <a class="resource-link-card" data-resource-item data-search="salesforce ai tools comparison claude codex gemini agentforce development strategy" href="/AI-blog/salesforce_ai_tools_comparison.html">
+              <span class="resource-type">AI Article</span>
+              <h3>AI Tools for Salesforce Development - Claude, Codex, Agentforce, Gemini</h3>
+              <div class="resource-meta">AI Strategy | Tool Comparison</div>
+              <p>Practical fit-by-use-case guidance across major AI tools used in Salesforce delivery work.</p>
+            </a>
+
+            <a class="resource-link-card" data-resource-item data-search="oneclaw openclaw ai claw wave agents trends governance tools ecosystem" href="/AI-blog/ai-claw-article.html">
+              <span class="resource-type">AI Article</span>
+              <h3>OneClaw, OpenClaw, and the New AI Claw Wave</h3>
+              <div class="resource-meta">AI Trends | Agent Ecosystem</div>
+              <p>A practical overview of the emerging AI claw ecosystem, including tools, governance, and market direction.</p>
+            </a>
+
+            <a class="resource-link-card" data-resource-item data-search="codex claude salesforce overview comparison lifecycle guide" href="/codex-claude-salesforce-guide/pages/overview.html">
+              <span class="resource-type">Guide Page</span>
+              <h3>Overview, Comparison, and Lifecycle</h3>
+              <div class="resource-meta">Guide | Codex and Claude</div>
+              <p>Executive framing, lifecycle coverage, and high-level comparison for AI-assisted Salesforce delivery.</p>
+            </a>
+
+            <a class="resource-link-card" data-resource-item data-search="discovery architecture requirements design nfr org strategy codex claude salesforce guide" href="/codex-claude-salesforce-guide/pages/discovery-and-architecture.html">
+              <span class="resource-type">Guide Page</span>
+              <h3>Discovery and Architecture</h3>
+              <div class="resource-meta">Guide | Architecture</div>
+              <p>Requirements translation, solution design, architecture options, NFRs, and org strategy guidance.</p>
+            </a>
+
+            <a class="resource-link-card" data-resource-item data-search="admin development automation apex lwc flow codex claude salesforce guide" href="/codex-claude-salesforce-guide/pages/admin-development-and-automation.html">
+              <span class="resource-type">Guide Page</span>
+              <h3>Admin, Development, and Automation</h3>
+              <div class="resource-meta">Guide | Build Work</div>
+              <p>Admin tasks, Apex, LWC, and automation guidance for implementation teams using AI assistants.</p>
+            </a>
+
+            <a class="resource-link-card" data-resource-item data-search="integrations quality delivery migration devops release management qa testing guide" href="/codex-claude-salesforce-guide/pages/integrations-quality-and-delivery.html">
+              <span class="resource-type">Guide Page</span>
+              <h3>Integrations, Quality, and Delivery</h3>
+              <div class="resource-meta">Guide | QA and Delivery</div>
+              <p>Integration architecture, migration, DevOps, release management, and QA testing support.</p>
+            </a>
+
+            <a class="resource-link-card" data-resource-item data-search="documentation operations prompts prompt library support leadership adoption guide" href="/codex-claude-salesforce-guide/pages/documentation-operations-and-prompts.html">
+              <span class="resource-type">Guide Page</span>
+              <h3>Documentation, Operations, and Prompt Library</h3>
+              <div class="resource-meta">Guide | Operations</div>
+              <p>Documentation patterns, support usage, leadership enablement, and reusable prompts.</p>
+            </a>
+
+            <a class="resource-link-card" data-resource-item data-search="governance roadmap operating model kpi adoption enterprise guide" href="/codex-claude-salesforce-guide/pages/governance-roadmap-and-appendices.html">
+              <span class="resource-type">Guide Page</span>
+              <h3>Governance, Roadmap, and Operating Model</h3>
+              <div class="resource-meta">Guide | Governance</div>
+              <p>Governance controls, roadmap planning, KPI tracking, and enterprise operating model guidance.</p>
+            </a>
+          </div>
+
+          <div class="resource-empty" id="resourceEmpty">No resources matched your search. Try a broader keyword like <strong>AI</strong>, <strong>Salesforce</strong>, <strong>approval</strong>, or <strong>governance</strong>.</div>
+        </div>
+      </section>
     </main>
     <footer class="site-end">
       <span>&copy; 2026 Shivam Gupta</span>
       <span><a href="/contact.html">Next: Contact</a></span>
     </footer>
   </div>
+  <script>
+    (function () {
+      var searchInput = document.getElementById('resourceSearch');
+      var cards = Array.prototype.slice.call(document.querySelectorAll('[data-resource-item]'));
+      var count = document.getElementById('resourceCount');
+      var empty = document.getElementById('resourceEmpty');
+
+      function updateResults() {
+        var query = (searchInput.value || '').trim().toLowerCase();
+        var visible = 0;
+
+        cards.forEach(function (card) {
+          var haystack = (card.getAttribute('data-search') || '').toLowerCase();
+          var matched = !query || haystack.indexOf(query) !== -1;
+          card.hidden = !matched;
+          if (matched) {
+            visible += 1;
+          }
+        });
+
+        count.textContent = visible + (visible === 1 ? ' resource' : ' resources');
+        empty.classList.toggle('is-visible', visible === 0);
+      }
+
+      searchInput.addEventListener('input', updateResults);
+      updateResults();
+    }());
+  </script>
 </body>
 </html>
+
+
+
 
 
