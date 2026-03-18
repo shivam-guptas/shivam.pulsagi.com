@@ -97,6 +97,10 @@
       box-shadow: 0 18px 38px rgba(15, 23, 42, 0.08);
     }
 
+    .resource-link-card.is-hidden {
+      display: none !important;
+    }
+
     .resource-link-card h3 {
       margin: 10px 0 8px;
       color: #111827;
@@ -179,74 +183,6 @@
       <section class="hero">
         <h1>Resources</h1>
         <p>Technical content and implementation documentation built for teams working across Salesforce architecture, Agentforce, AI, and delivery operations.</p>
-      </section>
-      <section class="section">
-        <div class="two-column">
-          <article class="page-card">
-            <h3>Salesforce Blog</h3>
-            <p>Focused Salesforce platform articles covering approvals, automation tradeoffs, architecture choices, and practical implementation guidance.</p>
-            <ul class="detail-list">
-              <li>Platform-first articles for architects, admins, and developers</li>
-              <li>Decision-oriented comparisons and design guidance</li>
-              <li>Kept separate from the Agentforce-specific article series</li>
-            </ul>
-            <div class="hero-actions" style="justify-content:flex-start;">
-              <a class="button primary" href="/salesforce-blog/">Open Salesforce Blog</a>
-            </div>
-            <h3 style="margin-top:20px;">Direct article links</h3>
-            <ul class="detail-list">
-              <li><a class="inline-link" href="/salesforce-blog/salesforce_approval_vs_flow_approval.html">Salesforce Approval Process vs Flow Approval: Architecture, Audit Trail, and Best Practices</a></li>
-            </ul>
-          </article>
-          <article class="page-card">
-            <h3>AI Blog</h3>
-            <p>Twelve detailed articles covering AI trends, Agentforce architecture, prompt design, actions, APIs, security, Data Cloud, reasoning, production deployment, and AI tooling strategy.</p>
-            <ul class="detail-list">
-              <li>Technical article series with code examples</li>
-              <li>Architecture diagrams and implementation steps</li>
-              <li>Designed for architects, admins, and developers</li>
-            </ul>
-            <div class="hero-actions" style="justify-content:flex-start;">
-              <a class="button primary" href="/AI-blog/">Open AI Blog</a>
-            </div>
-            <h3 style="margin-top:20px;">Direct article links</h3>
-            <ul class="detail-list">
-              <li><a class="inline-link" href="/AI-blog/agentforce-architecture.html">What is Salesforce Agentforce - Complete Architecture Guide</a></li>
-              <li><a class="inline-link" href="/AI-blog/build-first-agent.html">How to Build Your First AI Agent in Salesforce Agentforce</a></li>
-              <li><a class="inline-link" href="/AI-blog/prompt-builder.html">Agentforce Prompt Builder Deep Dive</a></li>
-              <li><a class="inline-link" href="/AI-blog/agent-actions-apex.html">Creating Custom Agent Actions with Apex</a></li>
-              <li><a class="inline-link" href="/AI-blog/external-api.html">Integrating Agentforce with External APIs</a></li>
-              <li><a class="inline-link" href="/AI-blog/support-agent.html">Building Autonomous Customer Support Agents</a></li>
-              <li><a class="inline-link" href="/AI-blog/security-governance.html">Agentforce Security, Governance and Trust Layer</a></li>
-              <li><a class="inline-link" href="/AI-blog/data-cloud-agent.html">Using Agentforce with Data Cloud</a></li>
-              <li><a class="inline-link" href="/AI-blog/advanced-reasoning.html">Advanced Multi-Step AI Agent Reasoning</a></li>
-              <li><a class="inline-link" href="/AI-blog/production-deployment.html">Deploying Agentforce to Production</a></li>
-              <li><a class="inline-link" href="/AI-blog/salesforce_ai_tools_comparison.html">AI Tools for Salesforce Development - Claude, Codex, Agentforce, Gemini</a></li>
-              <li><a class="inline-link" href="/AI-blog/ai-claw-article.html">OneClaw, OpenClaw, and the New AI Claw Wave</a></li>
-            </ul>
-          </article>
-          <article class="page-card">
-            <h3>Codex and Claude in Salesforce</h3>
-            <p>Enterprise guide explaining how AI assistants can support Salesforce requirements, architecture, development, QA, release management, support, and governance.</p>
-            <ul class="detail-list">
-              <li>Role-based usage model and prompt library</li>
-              <li>Governance, security, and implementation roadmap</li>
-              <li>Multi-page format for easier reading and indexing</li>
-            </ul>
-            <div class="hero-actions" style="justify-content:flex-start;">
-              <a class="button primary" href="/codex-claude-salesforce-guide/">Open AI Guide</a>
-            </div>
-            <h3 style="margin-top:20px;">Direct guide pages</h3>
-            <ul class="detail-list">
-              <li><a class="inline-link" href="/codex-claude-salesforce-guide/pages/overview.html">Overview, Comparison, and Lifecycle</a></li>
-              <li><a class="inline-link" href="/codex-claude-salesforce-guide/pages/discovery-and-architecture.html">Discovery and Architecture</a></li>
-              <li><a class="inline-link" href="/codex-claude-salesforce-guide/pages/admin-development-and-automation.html">Admin, Development, and Automation</a></li>
-              <li><a class="inline-link" href="/codex-claude-salesforce-guide/pages/integrations-quality-and-delivery.html">Integrations, Quality, and Delivery</a></li>
-              <li><a class="inline-link" href="/codex-claude-salesforce-guide/pages/documentation-operations-and-prompts.html">Documentation, Operations, and Prompt Library</a></li>
-              <li><a class="inline-link" href="/codex-claude-salesforce-guide/pages/governance-roadmap-and-appendices.html">Governance, Roadmap, and Operating Model</a></li>
-            </ul>
-          </article>
-        </div>
       </section>
       <section class="section">
         <div class="resource-library">
@@ -413,14 +349,26 @@
       var count = document.getElementById('resourceCount');
       var empty = document.getElementById('resourceEmpty');
 
+      function normalize(value) {
+        return (value || '')
+          .toLowerCase()
+          .replace(/[^a-z0-9\s]/g, ' ')
+          .replace(/\s+/g, ' ')
+          .trim();
+      }
+
       function updateResults() {
-        var query = (searchInput.value || '').trim().toLowerCase();
+        var query = normalize(searchInput.value || '');
+        var terms = query ? query.split(' ') : [];
         var visible = 0;
 
         cards.forEach(function (card) {
-          var haystack = (card.getAttribute('data-search') || '').toLowerCase();
-          var matched = !query || haystack.indexOf(query) !== -1;
-          card.hidden = !matched;
+          var haystack = normalize((card.getAttribute('data-search') || '') + ' ' + (card.textContent || ''));
+          var matched = !terms.length || terms.every(function (term) {
+            return haystack.indexOf(term) !== -1;
+          });
+          card.classList.toggle('is-hidden', !matched);
+          card.setAttribute('aria-hidden', matched ? 'false' : 'true');
           if (matched) {
             visible += 1;
           }
