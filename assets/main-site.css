@@ -597,3 +597,13 @@ img {
 .footer-linkedin {
   font-weight: 600;
 }
+
+.site-header .header-inner {
+  padding: 0;
+}
+
+.site-footer .footer-inner {
+  padding-top: 0;
+  color: inherit;
+  font-size: inherit;
+}
