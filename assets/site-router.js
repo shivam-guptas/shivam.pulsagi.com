@@ -110,6 +110,11 @@
     updateResults();
   }
 
+  function refreshUi() {
+    setActiveNavigation(window.location.href);
+    initResourcesSearch(document);
+  }
+
   function updateNode(selector, targetDoc, attributeName, resolver) {
     var currentNode = document.head.querySelector(selector);
     var targetNode = targetDoc.head.querySelector(selector);
@@ -206,9 +211,7 @@
     } else {
       window.history.replaceState({ url: targetUrl.href }, '', targetUrl.href);
     }
-
-    setActiveNavigation(targetUrl.href);
-    initResourcesSearch(document);
+    refreshUi();
     scrollToTarget(targetUrl);
 
     if (typeof window.gtag === 'function') {
@@ -321,8 +324,15 @@
   if (!window.history.state || !window.history.state.url) {
     window.history.replaceState({ url: window.location.href }, '', window.location.href);
   }
+  document.addEventListener('site:layout-ready', refreshUi);
 
-  setActiveNavigation(window.location.href);
-  initResourcesSearch(document);
-  window.SiteRouter = { navigate: navigate };
+  refreshUi();
+  window.SiteRouter = {
+    navigate: navigate,
+    refresh: refreshUi
+  };
 }());
+
+
+
+

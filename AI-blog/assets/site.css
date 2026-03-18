@@ -210,9 +210,12 @@ img {
 .reading-meta,
 .toc-card ol,
 .related-card p,
-.article-hero-media p,
 .hero-media p {
   color: var(--muted);
+}
+
+.article-hero-media p {
+  display: none;
 }
 
 .hero p {
@@ -625,6 +628,21 @@ blockquote {
 .nav-links a[aria-current="page"],
 .footer-nav a[aria-current="page"] {
   color: #4d6da8;
+
+.site-footer a,
+.site-end a,
+.footer-inner a {
+  color: inherit;
+}
+
+.site-footer a:hover,
+.site-end a:hover,
+.footer-inner a:hover,
+.footer-linkedin:hover {
+  color: var(--primary, #4d6da8);
+}
+
+.footer-linkedin {
   font-weight: 600;
 }
 

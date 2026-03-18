@@ -580,3 +580,20 @@ img {
     align-items: flex-start;
   }
 }
+
+.site-footer a,
+.site-end a,
+.footer-inner a {
+  color: inherit;
+}
+
+.site-footer a:hover,
+.site-end a:hover,
+.footer-inner a:hover,
+.footer-linkedin:hover {
+  color: var(--primary, #4d6da8);
+}
+
+.footer-linkedin {
+  font-weight: 600;
+}
