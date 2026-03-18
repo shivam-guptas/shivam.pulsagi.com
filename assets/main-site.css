@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --bg: #f4f5f7;
   --panel: #ffffff;
   --panel-soft: #fafbfc;
@@ -47,7 +47,8 @@ img {
   padding: 0 20px 56px;
 }
 
-.topbar {
+.topbar,
+.header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -469,7 +470,15 @@ img {
   color: var(--muted);
 }
 
-.site-end {
+.nav a[aria-current="page"],
+.nav-links a[aria-current="page"],
+.footer-nav a[aria-current="page"] {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.site-end,
+.footer-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -516,5 +525,58 @@ img {
   .experience-dates {
     text-align: left;
     white-space: normal;
+  }
+}
+
+
+
+.site-header {
+  padding: 26px 0;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  font-size: 0.96rem;
+  color: var(--muted);
+}
+
+.nav-links a:hover,
+.nav-links a[aria-current="page"],
+.footer-nav a[aria-current="page"] {
+  color: var(--primary);
+}
+
+.nav-links a[aria-current="page"],
+.footer-nav a[aria-current="page"] {
+  font-weight: 600;
+}
+
+.site-footer {
+  padding-top: 20px;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+@media (max-width: 760px) {
+  .header-inner,
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
