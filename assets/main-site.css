@@ -579,6 +579,44 @@ img {
     flex-direction: column;
     align-items: flex-start;
   }
+
+  .site-header {
+    padding: 18px 0;
+  }
+
+  .brand {
+    min-height: 30px;
+    padding-left: 62px;
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+  }
+
+  .brand img {
+    width: 52px;
+    height: 52px;
+  }
+
+  .nav-links {
+    width: 100%;
+    flex-wrap: nowrap;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-links a {
+    white-space: nowrap;
+    padding: 9px 12px;
+    border: 1px solid rgba(77, 109, 168, 0.16);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.82);
+  }
 }
 
 .site-footer a,
@@ -607,3 +645,4 @@ img {
   color: inherit;
   font-size: inherit;
 }
+

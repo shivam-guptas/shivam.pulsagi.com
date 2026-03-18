@@ -603,31 +603,144 @@ blockquote {
     padding: 0 14px 42px;
   }
 
+  .site-header {
+    padding: 18px 0;
+  }
+
   .hero-copy,
   .hero-media,
   .article-hero-copy,
   .article-hero-media,
   .content-card,
   .toc-card {
-    padding: 24px;
+    padding: 20px;
   }
 
   .header-inner,
-  .footer-inner,
-  .nav-links,
-  .footer-nav {
+  .footer-inner {
+    align-items: flex-start;
     gap: 12px;
+  }
+
+  .brand {
+    min-height: 30px;
+    padding-left: 62px;
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+  }
+
+  .brand img {
+    width: 52px;
+    height: 52px;
+  }
+
+  .nav-links {
+    width: 100%;
+    flex-wrap: nowrap;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-links a {
+    white-space: nowrap;
+    padding: 9px 12px;
+    border: 1px solid rgba(11, 92, 171, 0.12);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.82);
   }
 
   .hero h1,
   .article-title {
     line-height: 1.22;
   }
+
+  .article-page {
+    padding: 24px 0 38px;
+  }
+
+  .article-hero,
+  .article-layout {
+    gap: 18px;
+  }
+
+  .article-title {
+    font-size: clamp(1.9rem, 8vw, 2.45rem);
+  }
+
+  .article-standfirst {
+    font-size: 1rem;
+  }
+
+  .reading-meta {
+    gap: 10px;
+    font-size: 0.9rem;
+  }
+
+  .author-block {
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 22px;
+    padding-top: 18px;
+  }
+
+  .article-hero-media img {
+    aspect-ratio: 16 / 10;
+  }
+
+  .toc-card {
+    display: none;
+  }
+
+  .content-card section + section {
+    margin-top: 28px;
+  }
+
+  .content-card h2 {
+    font-size: 1.48rem;
+  }
+
+  .content-card h3 {
+    font-size: 1.12rem;
+  }
+
+  .content-card p,
+  .content-card li {
+    font-size: 1rem;
+  }
+
+  .article-page .article-table {
+    min-width: 620px;
+  }
+
+  .article-page .article-table th,
+  .article-page .article-table td {
+    padding: 12px !important;
+    font-size: 0.94rem;
+  }
+
+  blockquote,
+  .callout,
+  pre {
+    padding: 16px;
+  }
+
+  .related-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .nav-links a[aria-current="page"],
 .footer-nav a[aria-current="page"] {
   color: #4d6da8;
+  font-weight: 600;
+}
 
 .site-footer a,
 .site-end a,
@@ -639,7 +752,7 @@ blockquote {
 .site-end a:hover,
 .footer-inner a:hover,
 .footer-linkedin:hover {
-  color: var(--primary, #4d6da8);
+  color: var(--accent, #4d6da8);
 }
 
 .footer-linkedin {
