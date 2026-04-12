@@ -193,6 +193,66 @@
     <priority>0.95</priority>
   </url>
   <url>
+    <loc>https://shivam.pulsagi.com/salesforce-blog/named_credentials_and_external_credentials.html</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
+    <loc>https://shivam.pulsagi.com/salesforce-blog/platform_events_vs_change_data_capture.html</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
+    <loc>https://shivam.pulsagi.com/salesforce-blog/pub_sub_api_event_driven_integrations.html</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
+    <loc>https://shivam.pulsagi.com/salesforce-blog/graphql_api_overview.html</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
+    <loc>https://shivam.pulsagi.com/salesforce-blog/graphql_wire_adapter_lwc.html</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
+    <loc>https://shivam.pulsagi.com/salesforce-blog/dynamic_forms_guide.html</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
+    <loc>https://shivam.pulsagi.com/salesforce-blog/permission_set_groups_guide.html</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
+    <loc>https://shivam.pulsagi.com/salesforce-blog/lightning_web_security_vs_locker.html</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
+    <loc>https://shivam.pulsagi.com/salesforce-blog/devops_center_guide.html</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
+    <loc>https://shivam.pulsagi.com/salesforce-blog/lwc_vs_aura_component_architecture.html</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
     <loc>https://shivam.pulsagi.com/salesforce-blog/apex_batch_vs_queueable_with_apex_cursors_spring26.html</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
