@@ -1,15 +1,42 @@
-﻿<!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="icon" href="/favicon.ico" sizes="any" /><title>Salesforce Blog | Shivam Gupta</title><meta name="description" content="Salesforce architecture and platform articles by Shivam Gupta, including approval design, automation patterns, and implementation guidance." /><meta name="author" content="Shivam Gupta" /><meta name="robots" content="index, follow" /><link rel="canonical" href="https://shivam.pulsagi.com/salesforce-blog/" /><meta property="og:type" content="website" /><meta property="og:site_name" content="Salesforce Blog" /><meta property="og:title" content="Salesforce Blog | Shivam Gupta" /><meta property="og:description" content="Salesforce architecture and platform implementation content for architects, admins, and developers." /><meta property="og:url" content="https://shivam.pulsagi.com/salesforce-blog/" /><meta property="og:image" content="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1400&q=80" /><meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content="Salesforce Blog | Shivam Gupta" /><meta name="twitter:description" content="Salesforce architecture and platform implementation content for architects, admins, and developers." /><meta name="twitter:image" content="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1400&q=80" /><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" /><link rel="stylesheet" href="../AI-blog/assets/site.css" /><script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "Blog",
-  "name": "Salesforce Blog",
-  "description": "Salesforce architecture and platform articles by Shivam Gupta.",
-  "url": "https://shivam.pulsagi.com/salesforce-blog/",
-  "author": {
-    "@type": "Person",
-    "name": "Shivam Gupta"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <title>Salesforce Blog | Shivam Gupta</title>
+  <meta name="description" content="Salesforce architecture and platform articles by Shivam Gupta, including async Apex, approval design, automation patterns, and implementation guidance." />
+  <meta name="author" content="Shivam Gupta" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://shivam.pulsagi.com/salesforce-blog/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Salesforce Blog" />
+  <meta property="og:title" content="Salesforce Blog | Shivam Gupta" />
+  <meta property="og:description" content="Salesforce architecture and platform implementation content for architects, admins, and developers." />
+  <meta property="og:url" content="https://shivam.pulsagi.com/salesforce-blog/" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Salesforce Blog | Shivam Gupta" />
+  <meta name="twitter:description" content="Salesforce architecture and platform implementation content for architects, admins, and developers." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../AI-blog/assets/site.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Salesforce Blog",
+    "description": "Salesforce architecture and platform articles by Shivam Gupta.",
+    "url": "https://shivam.pulsagi.com/salesforce-blog/",
+    "author": {
+      "@type": "Person",
+      "name": "Shivam Gupta"
+    }
   }
-}</script><!-- Google Tag Manager -->
+  </script>
+<!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NFJXRZSV');</script>
 <!-- End Google Tag Manager --><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-S55MNPYJF8"></script>
@@ -19,23 +46,90 @@
   gtag('js', new Date());
 
   gtag('config', 'G-S55MNPYJF8');
-</script></head>
-<body><!-- Google Tag Manager (noscript) -->
+</script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFJXRZSV" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) --><div class="shell"><div data-layout="header"></div><main class="page-shell"><section class="hero"><div class="hero-card"><div class="hero-grid"><div class="hero-copy"><div class="eyebrow">Salesforce Technical Writing</div><h1>Salesforce articles for architects, admins, and developers.</h1><p>This section contains focused Salesforce platform articles covering architecture, approval design, automation tradeoffs, and implementation guidance.</p><p>The intent is practical delivery guidance: when to use which platform feature, what the operational tradeoffs are, and how to make decisions that scale in enterprise orgs.</p><div class="hero-actions"><a class="button button-primary" href="#articles">Browse articles</a><a class="button button-secondary" href="../resources.html">Open resources</a></div></div><div class="hero-media"><div class="hero-metrics"><div class="metric"><strong>1</strong><span>Salesforce platform article</span></div><div class="metric"><strong>Approvals</strong><span>Architecture, audit, and design tradeoffs</span></div><div class="metric"><strong>Practical</strong><span>Designed for real implementation decisions</span></div><div class="metric"><strong>Responsive</strong><span>Readable on desktop and mobile</span></div></div><div class="hero-portrait"><img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1400&q=80" alt="Salesforce approval architecture" /></div></div></div></div></section><section class="section" id="articles"><h2 class="section-heading">Articles</h2><p class="section-intro">Open the article below to read the full guide.</p><div class="article-list"><article class="article-card"><img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1400&q=80" alt="Salesforce Approval Process vs Flow Approval: Architecture, Audit Trail, and Best Practices" loading="lazy" /><div class="article-card-body"><div class="article-meta"><span class="article-kicker">Approvals</span><span>Published March 13, 2026</span></div><h3>Salesforce Approval Process vs Flow Approval: Architecture, Audit Trail, and Best Practices</h3><p>A practical comparison of classic Approval Process and Flow Approval Processes, including audit trail, history tracking, governance, and enterprise-fit tradeoffs.</p><a class="button button-secondary" href="./salesforce_approval_vs_flow_approval.html">Read article</a></div></article></div></section></main><div data-layout="footer"></div></div>  <script src="/assets/layout.js"></script>
+<!-- End Google Tag Manager (noscript) -->
+  <div class="shell">
+    <div data-layout="header"></div>
+    <main class="page-shell">
+      <section class="hero">
+        <div class="hero-card">
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <div class="eyebrow">Salesforce Technical Writing</div>
+              <h1>Salesforce articles for architects, admins, and developers.</h1>
+              <p>This section contains focused Salesforce platform articles covering async Apex, approval design, automation tradeoffs, and implementation guidance.</p>
+              <p>The intent is practical delivery guidance: when to use which platform feature, what the operational tradeoffs are, and how to make decisions that scale in enterprise orgs.</p>
+              <div class="hero-actions">
+                <a class="button button-primary" href="#articles">Browse articles</a>
+                <a class="button button-secondary" href="../resources.html">Open resources</a>
+              </div>
+            </div>
+            <div class="hero-media">
+              <div class="hero-metrics">
+                <div class="metric">
+                  <strong>2</strong>
+                  <span>Salesforce platform articles</span>
+                </div>
+                <div class="metric">
+                  <strong>Async Apex</strong>
+                  <span>Batch, Queueable, and cursor design tradeoffs</span>
+                </div>
+                <div class="metric">
+                  <strong>Practical</strong>
+                  <span>Designed for real implementation decisions</span>
+                </div>
+                <div class="metric">
+                  <strong>Responsive</strong>
+                  <span>Readable on desktop and mobile</span>
+                </div>
+              </div>
+              <div class="hero-portrait">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80" alt="Salesforce Apex architecture" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="articles">
+        <h2 class="section-heading">Articles</h2>
+        <p class="section-intro">Open an article below to read the full guide.</p>
+        <div class="article-list">
+          <article class="article-card">
+            <img src="../assets/images/salesforce/apex-batch-vs-queueable-cursors-spring26.png" alt="Apex Batch vs Queueable with Apex Cursors in Spring '26" loading="lazy" />
+            <div class="article-card-body">
+              <div class="article-meta">
+                <span class="article-kicker">Async Apex</span>
+                <span>Published April 13, 2026</span>
+              </div>
+              <h3>Apex Batch vs Queueable with Apex Cursors in Spring '26</h3>
+              <p>A practical comparison of Batch Apex, Queueable Apex, and the new cursor-driven async pattern for high-volume Salesforce processing.</p>
+              <a class="button button-secondary" href="./apex_batch_vs_queueable_with_apex_cursors_spring26.html">Read article</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1400&q=80" alt="Salesforce Approval Process vs Flow Approval: Architecture, Audit Trail, and Best Practices" loading="lazy" />
+            <div class="article-card-body">
+              <div class="article-meta">
+                <span class="article-kicker">Approvals</span>
+                <span>Published March 13, 2026</span>
+              </div>
+              <h3>Salesforce Approval Process vs Flow Approval: Architecture, Audit Trail, and Best Practices</h3>
+              <p>A practical comparison of classic Approval Process and Flow Approval Processes, including audit trail, history tracking, governance, and enterprise-fit tradeoffs.</p>
+              <a class="button button-secondary" href="./salesforce_approval_vs_flow_approval.html">Read article</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+    <div data-layout="footer"></div>
+  </div>
+  <script src="/assets/layout.js"></script>
   <script src="/assets/site-router.js"></script>
-</body></html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</body>
+</html>
