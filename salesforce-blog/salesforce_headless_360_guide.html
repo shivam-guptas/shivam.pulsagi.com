@@ -14,11 +14,11 @@
   <meta property="og:title" content="Salesforce Headless 360: Practical Setup Guide" />
   <meta property="og:description" content="From theory to practical setup: how Salesforce Headless 360 exposes CRM data, automation, workflows, APIs, MCP tools, and CLI capabilities for humans and agents." />
   <meta property="og:url" content="https://shivam.pulsagi.com/salesforce-blog/salesforce_headless_360_guide.html" />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=80" />
+  <meta property="og:image" content="https://shivam.pulsagi.com/assets/images/salesforce/headless-360-hero.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Salesforce Headless 360: Practical Setup Guide" />
   <meta name="twitter:description" content="A practical architect guide to Salesforce Headless 360, Hosted MCP Servers, Agentforce Vibes, setup, examples, code, and governance." />
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=80" />
+  <meta name="twitter:image" content="https://shivam.pulsagi.com/assets/images/salesforce/headless-360-hero.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
@@ -29,6 +29,9 @@
     .article-table th, .article-table td { padding: 14px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid rgba(221, 211, 194, 0.95); }
     .article-table th { background: rgba(11, 92, 171, 0.08); color: var(--ink); font-family: "Merriweather", serif; font-size: 0.98rem; }
     .article-table td { color: var(--muted-strong); }
+    .article-figure { margin: 26px 0; }
+    .article-figure img { display: block; width: 100%; height: auto; border: 1px solid rgba(221, 211, 194, 0.95); border-radius: 18px; background: #fff; box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08); }
+    .article-figure figcaption { margin-top: 10px; color: var(--muted-strong); font-size: 0.95rem; }
     .reference-list { padding-left: 22px; }
     .reference-list li + li { margin-top: 10px; }
   </style>
@@ -41,7 +44,7 @@
     "mainEntityOfPage": "https://shivam.pulsagi.com/salesforce-blog/salesforce_headless_360_guide.html",
     "datePublished": "2026-04-19",
     "dateModified": "2026-04-19",
-    "image": ["https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=80"],
+    "image": ["https://shivam.pulsagi.com/assets/images/salesforce/headless-360-hero.png"],
     "author": {"@type": "Person", "name": "Shivam Gupta", "url": "https://shivam.pulsagi.com/"},
     "publisher": {"@type": "Person", "name": "Shivam Gupta", "url": "https://shivam.pulsagi.com/"},
     "keywords": ["Salesforce Headless 360", "Salesforce MCP", "Hosted MCP Servers", "Agentforce Vibes", "Data 360", "Agentforce"]
@@ -69,7 +72,7 @@
           <div class="author-block"><img class="author-avatar" src="../shivam.jpg" alt="Shivam Gupta" width="64" height="64" /><div class="author-copy"><strong>Shivam Gupta</strong><span>Salesforce Architect and founder at <a href="https://pulsagi.com" rel="noopener" target="_blank">pulsagi.com</a></span></div></div>
         </div>
         <div class="article-hero-media">
-          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=80" alt="Enterprise data dashboard representing programmable Salesforce access" loading="eager" />
+          <img src="../assets/images/salesforce/headless-360-hero.png" alt="Salesforce Headless 360 overview graphic showing APIs, integrations, commerce, mobile, and customer 360" loading="eager" />
           <p>Headless 360 is Salesforce's move from browser-first CRM interaction to API, MCP, CLI, and agent-first access across data, workflows, business logic, analytics, and engagement surfaces.</p>
         </div>
       </section>
@@ -257,6 +260,18 @@ ChatGPT:         Copy the callback URL from ChatGPT Advanced settings</code></pr
               <li>Wait a short period for activation to propagate before testing.</li>
             </ol>
             <p>For most pilots, start with <code>platform/sobject-reads</code>. Avoid <code>platform/sobject-all</code> until you have a validated business need, clear user permissions, and an approval model for write actions.</p>
+
+            <h3>MCP configuration screens</h3>
+            <p>After a custom MCP server is active, the Details tab shows the server type, status, tool count, prompt count, and the server URL that the MCP client uses for authentication and tool discovery.</p>
+            <figure class="article-figure">
+              <img src="../assets/images/salesforce/headless-360-custom-mcp-screen.svg" alt="Custom MCP server details screen in Salesforce Setup" loading="lazy" />
+              <figcaption><strong>Custom MCP Screen:</strong> the MCP Server Details and Authentication Details panels confirm that the custom server is active and expose the custom server URL.</figcaption>
+            </figure>
+            <p>The Tools tab is where admins and developers review which tools the server exposes. This is the practical governance screen: if a tool is listed here, an MCP-compatible client can discover it and may try to invoke it based on the user's prompt.</p>
+            <figure class="article-figure">
+              <img src="../assets/images/salesforce/headless-360-mcp-tools-list.svg" alt="Tools tab under a custom MCP server in Salesforce Setup" loading="lazy" />
+              <figcaption><strong>Tools under MCP:</strong> each enabled tool should have a clear purpose, safe permissions, and a description that helps the AI client choose it correctly.</figcaption>
+            </figure>
 
             <h3>Step 4: Pick the server URL</h3>
             <p>The URL changes based on whether the org is production or sandbox/scratch.</p>
