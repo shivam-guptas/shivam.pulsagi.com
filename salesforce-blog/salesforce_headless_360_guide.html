@@ -241,8 +241,11 @@
               <li>Add OAuth scopes: <code>mcp_api</code> and <code>refresh_token</code>.</li>
               <li>Enable JWT-based access tokens for named users.</li>
               <li>Require PKCE for supported authorization flows.</li>
-              <li>Create the app and copy the consumer key.</li>
+              <li>Deselect the other Security options, including access tokens in the <code>access_token</code> parameter, Client Credentials Flow, Require Secret for Web Server Flow, Require Secret for Refresh Token Flow, and Authorization Code and Credentials Flow.</li>
+              <li>Create the app.</li>
+              <li>Open <strong>Settings</strong>, then <strong>Consumer Key and Secret</strong> under OAuth Settings, and copy the consumer key.</li>
             </ol>
+            <p>Salesforce notes that the External Client App might take up to 30 minutes to become available worldwide. If Postman authentication fails immediately after app creation, wait and try again before changing the configuration.</p>
             <p>Common callback URLs from Salesforce's setup guidance:</p>
 <pre><code>Postman desktop: https://oauth.pstmn.io/v1/callback
 Postman web:     https://oauth.pstmn.io/v1/browser-callback
@@ -279,19 +282,36 @@ ChatGPT:         Copy the callback URL from ChatGPT Advanced settings</code></pr
 https://api.salesforce.com/platform/mcp/v1/platform/sobject-reads
 
 Sandbox or scratch:
-https://api.salesforce.com/platform/mcp/v1/sandbox/platform/sobject-reads</code></pre>
+https://api.salesforce.com/platform/mcp/v1/sandbox/platform/sobject-reads
+
+Custom production server:
+https://api.salesforce.com/platform/mcp/v1/custom/ShivamTestMCP
+
+Custom sandbox or scratch server:
+https://api.salesforce.com/platform/mcp/v1/sandbox/custom/ShivamTestMCP</code></pre>
 
             <h3>Step 5: Test with Postman first</h3>
             <p>Postman is a good first test because it calls the MCP tool directly and shows raw JSON. That helps you separate Salesforce setup issues from LLM interpretation issues.</p>
             <ol>
               <li>Create a new Postman request and select MCP.</li>
-              <li>Switch from STDIO to HTTP.</li>
+              <li>Switch the request transport from STDIO to HTTP.</li>
               <li>Paste the MCP server URL.</li>
-              <li>Set OAuth 2.0 with Authorization Code with PKCE.</li>
-              <li>Use the External Client App consumer key as the client ID.</li>
+              <li>Open the <strong>Authorization</strong> tab.</li>
+              <li>Set Auth Type to <strong>OAuth 2.0</strong>.</li>
+              <li>Set <strong>Add authorization data to</strong> to <strong>Request Headers</strong>.</li>
+              <li>Click <strong>Configure New Token</strong>.</li>
+              <li>Set Grant Type to <strong>Authorization Code (With PKCE)</strong>.</li>
+              <li>Keep the Postman callback URL and confirm that it exactly matches the callback URL in the External Client App.</li>
+              <li>For Postman desktop, use <code>https://oauth.pstmn.io/v1/callback</code>; for Postman web, use <code>https://oauth.pstmn.io/v1/browser-callback</code>.</li>
+              <li>Check <strong>Authorize using browser</strong>.</li>
+              <li>Use the correct Salesforce authorization and token URLs for the org type.</li>
+              <li>Use the External Client App consumer key as the client ID and leave the client secret blank.</li>
+              <li>Set Code Challenge Method to <strong>SHA-256</strong>.</li>
+              <li>Leave Code Verifier and State blank.</li>
               <li>Use <code>mcp_api refresh_token</code> as the scope.</li>
-              <li>Get an access token and authorize as a Salesforce user.</li>
-              <li>Call <code>getUserInfo</code> first, then test <code>soqlQuery</code>.</li>
+              <li>Set Client Authentication to <strong>Send client credentials in body</strong>.</li>
+              <li>Click <strong>Get New Access Token</strong>, authenticate to Salesforce, authorize the app, and click <strong>Use Token</strong> if Postman shows the Manage Access Tokens modal.</li>
+              <li>Call <code>getUserInfo</code> first, then test <code>soqlQuery</code> or <code>listRecentSObjectRecords</code>.</li>
             </ol>
           </section>
 
@@ -367,12 +387,16 @@ https://api.salesforce.com/platform/mcp/v1/sandbox/platform/sobject-reads</code>
 
             <h3>2. OAuth configuration</h3>
 <pre><code>Grant type:           Authorization Code with PKCE
+Add auth data to:     Request Headers
 Authorization URL:    https://test.salesforce.com/services/oauth2/authorize
 Access token URL:     https://test.salesforce.com/services/oauth2/token
 Client ID:            External Client App consumer key
 Client secret:        Leave blank when using PKCE
 Scope:                mcp_api refresh_token
-Code challenge:       SHA-256</code></pre>
+Code challenge:       SHA-256
+Code verifier:        Leave blank
+State:                Leave blank
+Client auth:          Send client credentials in body</code></pre>
 
             <h3>3. First tool call: user verification</h3>
             <p>In Postman's MCP request view, choose <code>getUserInfo</code> from the tool list and run it. The response should show the authenticated user's identity and context. This confirms that the connection is not using an anonymous or shared integration identity.</p>
@@ -395,6 +419,13 @@ Code challenge:       SHA-256</code></pre>
 Return only Id, Name, and Industry.
 Do not update any records.</code></pre>
             <p>If the client asks for confirmation before using tools, approve only the read-only action. If it tries to use a write or delete tool during a read-only test, your server selection or client configuration is wrong.</p>
+
+            <h3>Working Postman example</h3>
+            <p>The screenshot below shows a working custom MCP server call from Postman. The request calls <code>listRecentSObjectRecordsplatform_sobject_all</code> with <code>subject-name</code> set to <code>Account</code>, and the response confirms that Postman is connected and receiving Salesforce account data through the MCP tool.</p>
+            <figure class="article-figure">
+              <img src="../assets/images/salesforce/headless-360-postman-mcp-working-example.svg" alt="Postman running a Salesforce custom MCP tools call and receiving an Account JSON response" loading="lazy" />
+              <figcaption><strong>Working Postman MCP example:</strong> use this kind of direct tool response to validate the server URL, OAuth configuration, tool name, input arguments, and Salesforce permissions before moving the same server into an AI client.</figcaption>
+            </figure>
           </section>
 
           <section id="custom-tool">
